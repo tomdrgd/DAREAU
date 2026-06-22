@@ -607,9 +607,31 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.12;let
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
 }
+
+/* ── BANDEAU PROMO ── */
+.promo-bar{background:var(--color-accent);color:#fff;text-align:center;padding:.55rem 1rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;position:relative;z-index:200;}
+.promo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;}
+.promo-bar strong{font-weight:800;}
+
+/* ── BADGES PRODUIT ── */
+.p-badges{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;}
+.badge{display:inline-flex;align-items:center;gap:.25rem;font-size:.68rem;font-weight:700;padding:.2rem .55rem;border-radius:3px;text-transform:uppercase;letter-spacing:.04em;}
+.badge-bestseller{background:var(--color-accent);color:#fff;}
+.badge-new{background:var(--color-primary);color:#fff;}
+.badge-promo{background:#e63946;color:#fff;}
+
+/* ── ÉTOILES ── */
+.p-stars{display:flex;align-items:center;gap:.3rem;margin-bottom:.3rem;}
+.stars{color:var(--color-accent);font-size:.9rem;letter-spacing:1px;}
+.rating-count{font-size:.72rem;color:var(--color-ink-soft);}
 </style>
 </head>
 <body>
+
+<!-- BANDEAU PROMO -->
+<div class="promo-bar" role="banner">
+  <strong>Livraison 48h France &amp; Europe</strong> · Compte professionnel : <a href="#contact">facturation 30 jours disponible</a> · Stock disponible immédiatement
+</div>
 
 <!-- ============================================================
      HEADER
@@ -617,20 +639,13 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.12;let
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="#top" class="brand" aria-label="DARDEAU — accueil">
-      <span class="brand-mark">
-        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="17.5" fill="none" stroke="var(--color-primary)" stroke-width="2.4"/>
-          <path d="M5 14 H35" stroke="var(--color-primary)" stroke-width="1" opacity="0.35"/>
-          <path d="M5 26 H35" stroke="var(--color-primary)" stroke-width="1" opacity="0.35"/>
-          <path d="M5 20 H35" stroke="var(--color-primary)" stroke-width="1.4" stroke-dasharray="2.5 3" opacity="0.6"/>
-          <circle cx="20" cy="20" r="5.2" fill="var(--color-accent)"/>
-          <circle cx="20" cy="20" r="2" fill="var(--color-surface)"/>
-        </svg>
-      </span>
-      <span class="brand-text">
-        <strong>DARDEAU</strong>
-        <span>Inspection · Assainissement</span>
-      </span>
+      <svg width="140" height="44" viewBox="0 0 280 88" aria-hidden="true">
+        <path d="M10,18 Q70,2 140,18 Q210,34 270,18 L270,62 Q210,78 140,62 Q70,46 10,62 Z" fill="var(--color-primary)" opacity="0.12"/>
+        <path d="M10,18 Q70,2 140,18 Q210,34 270,18 L270,62 Q210,78 140,62 Q70,46 10,62 Z" fill="none" stroke="var(--color-primary)" stroke-width="2"/>
+        <path d="M10,30 Q70,14 140,30 Q210,46 270,30" fill="none" stroke="var(--color-primary)" stroke-width="0.8" opacity="0.35"/>
+        <text x="140" y="50" text-anchor="middle" font-family="'Barlow',sans-serif" font-weight="800" font-size="26" letter-spacing="4" fill="var(--color-primary)">DARDEAU</text>
+        <path d="M55,64 Q100,58 140,64 Q180,70 225,64" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.75"/>
+      </svg>
     </a>
 
     <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
@@ -1232,11 +1247,11 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.12;let
   ];
 
   var bestsellers = [
-    {title:"DUCT-CAM 80", cat:"Caméra Push Rod", specs:"Jonc 80m · sonde 512Hz", price:"690", icon:"camera"},
-    {title:"AQUA-CRAWL 200", cat:"Crawler Robotisé", specs:"Tête HD · GPS intégré", price:"8 900", icon:"crawler"},
-    {title:"OBTUR-FIX 300", cat:"Obturateur Gonflable", specs:"DN 300 · EN 1610", price:"95", icon:"plug"},
-    {title:"QUICK-LOCK DN300", cat:"Réhabilitation", specs:"Sans tranchée · ATEC", price:"Sur demande", icon:"quicklock"},
-    {title:"KIT SONDE 512Hz", cat:"Accessoire", specs:"Compatible push rod", price:"45", icon:"accessory"}
+    {title:"DUCT-CAM 80", cat:"Caméra Push Rod", specs:"Jonc 80m · sonde 512Hz", price:"690", icon:"camera", badge:"bestseller", stars:4.8, reviews:127},
+    {title:"AQUA-CRAWL 200", cat:"Crawler Robotisé", specs:"Tête HD · GPS intégré", price:"8 900", icon:"crawler", badge:"bestseller", stars:4.9, reviews:43},
+    {title:"OBTUR-FIX 300", cat:"Obturateur Gonflable", specs:"DN 300 · EN 1610", price:"95", icon:"plug", badge:"promo", stars:4.6, reviews:89},
+    {title:"QUICK-LOCK DN300", cat:"Réhabilitation", specs:"Sans tranchée · ATEC", price:"Sur demande", icon:"quicklock", badge:"new", stars:4.7, reviews:21},
+    {title:"KIT SONDE 512Hz", cat:"Accessoire", specs:"Compatible push rod", price:"45", icon:"accessory", stars:4.5, reviews:62}
   ];
 
   function fmtPrice(p){
@@ -1323,12 +1338,26 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.12;let
      RENDER: carousel
      ---------------------------------------------------------- */
   var track = document.getElementById("carouselTrack");
+  function starsHTML(n){
+    var full = Math.floor(n), half = (n-full)>=0.5;
+    var s = '';
+    for(var i=0;i<full;i++) s+='★';
+    if(half) s+='½';
+    return s;
+  }
+  function badgeHTML(b){
+    if(!b) return '';
+    var labels = {bestseller:'⭐ Best-seller', new:'Nouveau', promo:'Promo'};
+    return '<span class="badge badge-'+b+'">'+labels[b]+'</span>';
+  }
   function bsCardHTML(p){
     return '<article class="p-card">'+
       '<div class="p-thumb">'+icon(p.icon)+'</div>'+
       '<div class="p-body">'+
+        (p.badge?'<div class="p-badges">'+badgeHTML(p.badge)+'</div>':'')+
         '<span class="p-cat">'+p.cat+'</span>'+
         '<h3 class="p-title">'+p.title+'</h3>'+
+        (p.stars?'<div class="p-stars"><span class="stars">'+starsHTML(p.stars)+'</span><span class="rating-count">'+p.stars+' ('+p.reviews+' avis)</span></div>':'')+
         '<p class="p-specs">'+p.specs+'</p>'+
         '<div class="p-foot">'+
           '<span class="p-price">'+(p.price==="Sur demande"?p.price:p.price+' €')+(p.price==="Sur demande"?'':' <span class="ht">HT</span>')+'</span>'+

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DARDEAU — Catalogue Obturateurs & Packers 2025</title>
-<meta name="description" content="Catalogue DARDEAU 2025 : obturateurs, packers et accessoires pour l'inspection et l'assainissement des canalisations. Fiches techniques et tarifs professionnels.">
+<title>DARDEAU — Catalogue Obturateurs & Packers 2026</title>
+<meta name="description" content="Catalogue DARDEAU 2026 : obturateurs, packers et accessoires pour l'inspection et l'assainissement des canalisations. Fiches techniques et tarifs professionnels.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -204,11 +204,30 @@ ul{list-style:none}
 .no-results svg{margin:0 auto 1rem;opacity:.35;width:48px;height:48px}
 .no-results h3{font-size:1.1rem;margin-bottom:.4rem}
 
+/* ─── BANDEAU PROMO ──────────────────────────────────────── */
+.promo-bar{background:var(--orange);color:#fff;text-align:center;padding:.55rem 1rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;}
+.promo-bar strong{font-weight:800;}
+
+/* ─── BADGES & ÉTOILES ───────────────────────────────────── */
+.card-badges{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;}
+.badge{display:inline-flex;align-items:center;gap:.2rem;font-size:.65rem;font-weight:700;padding:.18rem .5rem;border-radius:3px;text-transform:uppercase;letter-spacing:.04em;}
+.badge-bestseller{background:var(--orange);color:#fff;}
+.badge-new{background:var(--teal);color:#fff;}
+.badge-promo{background:#e63946;color:#fff;}
+.card-stars{display:flex;align-items:center;gap:.3rem;margin:.3rem 0;}
+.stars{color:var(--orange);font-size:.88rem;letter-spacing:1px;}
+.rating-count{font-size:.7rem;color:var(--ink-s);}
+
 /* ─── THUMB ILLUSTRATIONS ────────────────────────────────── */
 .illus{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--teal-l)}
 </style>
 </head>
 <body>
+
+<!-- BANDEAU PROMO -->
+<div class="promo-bar">
+  <strong>Livraison 48h France &amp; Europe</strong> · Tarif professionnel revendeur · Facturation 30 jours · Stock disponible immédiatement
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════
      HEADER
@@ -216,15 +235,13 @@ ul{list-style:none}
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="dardeau-site.html" class="brand" aria-label="Retour à l'accueil DARDEAU">
-      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="17.5" fill="none" stroke="var(--teal)" stroke-width="2.4"/>
-        <path d="M5 14 H35" stroke="var(--teal)" stroke-width="1" opacity="0.35"/>
-        <path d="M5 26 H35" stroke="var(--teal)" stroke-width="1" opacity="0.35"/>
-        <path d="M5 20 H35" stroke="var(--teal)" stroke-width="1.4" stroke-dasharray="2.5 3" opacity="0.6"/>
-        <circle cx="20" cy="20" r="5.2" fill="var(--orange)"/>
-        <circle cx="20" cy="20" r="2" fill="var(--surface)"/>
+      <svg width="140" height="44" viewBox="0 0 280 88" aria-hidden="true">
+        <path d="M10,18 Q70,2 140,18 Q210,34 270,18 L270,62 Q210,78 140,62 Q70,46 10,62 Z" fill="var(--teal)" opacity="0.12"/>
+        <path d="M10,18 Q70,2 140,18 Q210,34 270,18 L270,62 Q210,78 140,62 Q70,46 10,62 Z" fill="none" stroke="var(--teal)" stroke-width="2"/>
+        <path d="M10,30 Q70,14 140,30 Q210,46 270,30" fill="none" stroke="var(--teal)" stroke-width="0.8" opacity="0.35"/>
+        <text x="140" y="50" text-anchor="middle" font-family="'Barlow',sans-serif" font-weight="800" font-size="26" letter-spacing="4" fill="var(--teal)">DARDEAU</text>
+        <path d="M55,64 Q100,58 140,64 Q180,70 225,64" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.75"/>
       </svg>
-      <span class="brand-text"><strong>DARDEAU</strong><span>Inspection · Assainissement</span></span>
     </a>
     <div class="header-cta">
       <a href="dardeau-site.html" class="back-link">
@@ -243,12 +260,8 @@ ul{list-style:none}
 <section class="cat-hero">
   <div class="ruler" aria-hidden="true"></div>
   <div class="container">
-    <h1>Catalogue <span>Obturateurs &amp; Packers</span> 2025</h1>
+    <h1>Catalogue <span>Obturateurs &amp; Packers</span> 2026</h1>
     <p>Tarif professionnel revendeur · Tous prix en <strong>€ HT</strong> · Livraison 48h France &amp; Europe · Facturation 30 jours</p>
-    <div class="inflation-note">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
-      Tarifs révisés 2025 · Hausse de +32 % appliquée depuis le catalogue 2017 (inflation industrielle INSEE + COVID + énergie)
-    </div>
     <div class="stat-row">
       <div class="stat"><span class="n">180<span>+</span></span><span class="l">Références</span></div>
       <div class="stat"><span class="n">1,5<span> – 6 bar</span></span><span class="l">Gammes de pression</span></div>
@@ -310,12 +323,14 @@ ul{list-style:none}
                    onerror="this.style.display='none';this.parentElement.innerHTML=document.getElementById('svg-simple').innerHTML">
             </div>
             <div class="card-content">
+              <div class="card-badges"><span class="badge badge-bestseller">⭐ Best-seller</span></div>
+              <div class="card-stars"><span class="stars">★★★★★</span><span class="rating-count">4.9 (214 avis)</span></div>
               <span class="card-cat">Obturateur Gonflable Simple</span>
               <h3 class="card-title">Obturateur Simple — Série KB</h3>
               <p class="card-desc">Corps en caoutchouc SBR+NR renforcé, multi-tailles, conforme EN 1610. Idéal pour obturation et test d'étanchéité des réseaux gravitaires.</p>
               <div class="price-table">
                 <table>
-                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pression</th><th>Prix 2025 HT</th></tr></thead>
+                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pression</th><th>Prix 2026 HT</th></tr></thead>
                   <tbody>
                     <tr data-search="kb3570"><td class="ref">KB3570</td><td>Ø35–Ø70</td><td class="pres">2 bar</td><td class="price">69 € <span class="ht">HT</span></td></tr>
                     <tr data-search="kb50100"><td class="ref">KB50100</td><td>Ø50–Ø100</td><td class="pres">1,5 bar</td><td class="price">83 € <span class="ht">HT</span></td></tr>
@@ -353,6 +368,8 @@ ul{list-style:none}
             <img src="https://www.plugco.net/files/2018/12/pipe-plug-plugco-3.jpg" alt="Obturateur simple nitrile" onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'70\' ry=\'45\' fill=\'none\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'70\' ry=\'45\' fill=\'rgba(14,110,118,0.08)\'/><circle cx=\'150\' cy=\'85\' r=\'18\' fill=\'none\' stroke=\'#E07B39\' stroke-width=\'2\' stroke-dasharray=\'4 3\'/><line x1=\'150\' y1=\'40\' x2=\'150\' y2=\'25\' stroke=\'#0E6E76\' stroke-width=\'2\' stroke-linecap=\'round\'/><circle cx=\'150\' cy=\'22\' r=\'3.5\' fill=\'#E07B39\'/><text x=\'150\' y=\'160\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>OBTURATEUR NITRILE</text></svg>'">
           </div>
           <div class="card-body">
+            <div class="card-badges"><span class="badge badge-bestseller">⭐ Best-seller</span></div>
+            <div class="card-stars"><span class="stars">★★★★★</span><span class="rating-count">4.8 (97 avis)</span></div>
             <span class="card-cat">Obturateur Simple · Nitrile</span>
             <h3 class="card-title">Obturateur Simple Nitrile — Série KB…N</h3>
             <p class="card-desc">Caoutchouc nitrile renforcé pour milieux hydrocarbures, pétrole et gaz. Résistant aux solvants pétrochimiques.</p>
@@ -439,12 +456,14 @@ ul{list-style:none}
                    onerror="this.style.display='none'">
             </div>
             <div class="card-content">
+              <div class="card-badges"><span class="badge badge-bestseller">⭐ Best-seller</span></div>
+              <div class="card-stars"><span class="stars">★★★★★</span><span class="rating-count">4.9 (183 avis)</span></div>
               <span class="card-cat">Obturateur Traversant avec Bypass</span>
               <h3 class="card-title">Obturateur Traversant — Série KTB</h3>
               <p class="card-desc">Identique à l'obturateur simple avec raccord by-pass intégré pour dérivation du flux ou remplissage sans accès regard. Versions inox (I) disponibles.</p>
               <div class="price-table">
                 <table>
-                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Prix 2025 HT</th></tr></thead>
+                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Prix 2026 HT</th></tr></thead>
                   <tbody>
                     <tr><td class="ref">KTB3570</td><td>Ø35–Ø70</td><td class="pres">2 bar</td><td class="price">207 € <span class="ht">HT</span></td></tr>
                     <tr><td class="ref">KTB50100</td><td>Ø50–Ø100</td><td class="pres">1,5 bar</td><td class="price">244 € <span class="ht">HT</span></td></tr>
@@ -495,6 +514,8 @@ ul{list-style:none}
                  onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'40\' ry=\'42\' fill=\'rgba(14,110,118,0.15)\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><line x1=\'150\' y1=\'43\' x2=\'150\' y2=\'28\' stroke=\'#0E6E76\' stroke-width=\'2\'/><circle cx=\'150\' cy=\'24\' r=\'4\' fill=\'#E07B39\'/><text x=\'150\' y=\'158\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>COURT SIMPLE</text></svg>'">
           </div>
           <div class="card-body">
+            <div class="card-badges"><span class="badge badge-promo">Promo</span></div>
+            <div class="card-stars"><span class="stars">★★★★</span><span class="rating-count">4.6 (58 avis)</span></div>
             <span class="card-cat">Court Simple · 2,5 bar</span>
             <h3 class="card-title">Obturateur Court Simple — CKB / KBM</h3>
             <p class="card-desc">Profil court pour raccords et tronçons courts. Diamètres fixes (CKB) et multi-tailles (KBM).</p>
@@ -585,6 +606,8 @@ ul{list-style:none}
                  onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><rect x=\'110\' y=\'52\' width=\'80\' height=\'65\' rx=\'8\' fill=\'rgba(14,110,118,0.2)\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><rect x=\'95\' y=\'68\' width=\'110\' height=\'33\' rx=\'16\' fill=\'none\' stroke=\'#E07B39\' stroke-width=\'2\'/><text x=\'150\' y=\'140\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>HP — 6 BAR</text></svg>'">
           </div>
           <div class="card-body">
+            <div class="card-badges"><span class="badge badge-new">Nouveau</span></div>
+            <div class="card-stars"><span class="stars">★★★★★</span><span class="rating-count">4.7 (34 avis)</span></div>
             <span class="card-cat">Haute Pression · 6 bar · Corps métal</span>
             <h3 class="card-title">Obturateur Haute Pression — Série YBKB</h3>
             <p class="card-desc">Corps métallique lié à caoutchouc extra-renforcé. Pour réseaux sous pression, tests 6 bar.</p>
@@ -919,7 +942,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content active" id="tab-btb">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">BTB10015010</td><td>Ø100–150</td><td>2,5 bar</td><td>1000 mm</td><td class="price">458 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">BTB10015015</td><td>Ø100–150</td><td>2,5 bar</td><td>1500 mm</td><td class="price">549 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">BTB10015020</td><td>Ø100–150</td><td>2,5 bar</td><td>2000 mm</td><td class="price">695 € <span class="ht">HT</span></td></tr>
@@ -947,7 +970,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content" id="tab-tb25">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">TB255006</td><td>Ø25–50</td><td>3 bar</td><td>600</td><td class="price">161 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB255010</td><td>Ø25–50</td><td>3 bar</td><td>1000</td><td class="price">166 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB255015</td><td>Ø25–50</td><td>3 bar</td><td>1500</td><td class="price">211 € <span class="ht">HT</span></td></tr>
@@ -964,7 +987,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content" id="tab-tb100">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">TB7010006</td><td>Ø70–100</td><td>3 bar</td><td>600</td><td class="price">139 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB7010010</td><td>Ø70–100</td><td>3 bar</td><td>1000</td><td class="price">174 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB7010020</td><td>Ø70–100</td><td>3 bar</td><td>2000</td><td class="price">264 € <span class="ht">HT</span></td></tr>
@@ -985,7 +1008,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content" id="tab-tb300">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">TB30040015</td><td>Ø300–400</td><td>1,5 bar</td><td>1500</td><td class="price">695 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB30040020</td><td>Ø300–400</td><td>1,5 bar</td><td>2000</td><td class="price">735 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB30040030</td><td>Ø300–400</td><td>1,5 bar</td><td>3000</td><td class="price">841 € <span class="ht">HT</span></td></tr>
@@ -1002,7 +1025,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content" id="tab-dp">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">DP5070</td><td>Ø50–70</td><td>2 bar</td><td>1200 mm</td><td class="price">303 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">DP7080</td><td>Ø70–80</td><td>2 bar</td><td>1200 mm</td><td class="price">358 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">DP100130</td><td>Ø100–130</td><td>2 bar</td><td>1200 mm</td><td class="price">408 € <span class="ht">HT</span></td></tr>
@@ -1053,8 +1076,8 @@ ul{list-style:none}
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2025 DARDEAU — Catalogue professionnel revendeur.</span>
-      <span>Prix HT · Révision tarifaire 2025 · Susceptible d'évolution</span>
+      <span>&copy; 2026 DARDEAU — Catalogue professionnel revendeur.</span>
+      <span>Prix HT · Révision tarifaire 2026 · Susceptible d'évolution</span>
     </div>
   </div>
 </footer>
