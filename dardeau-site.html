@@ -608,6 +608,58 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.12;let
   *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
 }
 
+/* ── PANIER ── */
+.cart-fab{position:fixed;bottom:2rem;right:2rem;z-index:900;background:var(--color-primary);color:#fff;border:none;border-radius:50px;padding:.7rem 1.2rem;font-family:var(--font-display);font-weight:700;font-size:.82rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;box-shadow:0 4px 20px rgba(14,110,118,0.35);transition:all 180ms var(--ease);}
+.cart-fab:hover{background:var(--color-primary-dark);transform:translateY(-2px);}
+.cart-badge{background:#fff;color:var(--color-primary);border-radius:50%;width:20px;height:20px;display:none;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;}
+.cart-badge.show{display:flex;}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1000;opacity:0;pointer-events:none;transition:opacity 200ms;}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-sidebar{position:fixed;top:0;right:0;height:100vh;width:min(420px,100vw);background:var(--color-surface);z-index:1100;transform:translateX(100%);transition:transform 260ms cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-4px 0 32px rgba(0,0,0,.12);}
+.cart-sidebar.open{transform:translateX(0);}
+.cart-head{padding:1.25rem 1.5rem;border-bottom:1px solid var(--color-border);display:flex;align-items:center;justify-content:space-between;}
+.cart-head h2{font-family:var(--font-display);font-weight:800;font-size:1.05rem;color:var(--color-ink);}
+.cart-close-btn{background:none;border:none;cursor:pointer;font-size:1.3rem;color:var(--color-ink-soft);line-height:1;padding:0;}
+.cart-body{flex:1;overflow-y:auto;padding:1rem 1.5rem;}
+.cart-empty-msg{text-align:center;padding:3rem 1rem;color:var(--color-ink-soft);font-size:.88rem;}
+.cart-item{display:flex;gap:.75rem;align-items:flex-start;padding:.8rem 0;border-bottom:1px solid var(--color-border);}
+.cart-item-info{flex:1;min-width:0;}
+.cart-item-ref{font-weight:700;font-size:.82rem;color:var(--color-ink);}
+.cart-item-name{font-size:.75rem;color:var(--color-ink-soft);margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cart-item-type{font-size:.7rem;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:.04em;}
+.cart-item-dates{font-size:.7rem;color:var(--color-accent);margin-top:.15rem;}
+.cart-item-price{font-weight:700;font-size:.88rem;color:var(--color-primary);white-space:nowrap;}
+.cart-item-del{background:none;border:none;cursor:pointer;color:#ddd;font-size:.95rem;padding:0 0 0 .5rem;flex-shrink:0;}
+.cart-item-del:hover{color:#e63946;}
+.cart-foot{padding:1.25rem 1.5rem;border-top:1px solid var(--color-border);}
+.cart-total-row{display:flex;justify-content:space-between;font-weight:700;font-size:.95rem;color:var(--color-ink);margin-bottom:1rem;}
+.cart-devis-btn{width:100%;background:var(--color-primary);color:#fff;border:none;border-radius:8px;padding:.85rem;font-family:var(--font-display);font-weight:700;font-size:.9rem;cursor:pointer;transition:background 180ms;}
+.cart-devis-btn:hover{background:var(--color-primary-dark);}
+.checkout-fields{display:none;flex-direction:column;gap:.6rem;margin-bottom:.85rem;}
+.checkout-fields.show{display:flex;}
+.checkout-fields input,.checkout-fields textarea{border:1.5px solid var(--color-border);border-radius:6px;padding:.55rem .75rem;font-size:.82rem;font-family:var(--font-body);color:var(--color-ink);width:100%;box-sizing:border-box;background:var(--color-surface);}
+.checkout-fields input:focus,.checkout-fields textarea:focus{outline:none;border-color:var(--color-primary);}
+.checkout-submit-btn{width:100%;background:var(--color-accent);color:#fff;border:none;border-radius:8px;padding:.85rem;font-family:var(--font-display);font-weight:700;font-size:.9rem;cursor:pointer;}
+.checkout-ok{display:none;text-align:center;padding:1.5rem 1rem;}
+.checkout-ok strong{display:block;font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--color-primary);margin-bottom:.4rem;}
+.checkout-ok p{font-size:.82rem;color:var(--color-ink-soft);}
+.add-modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1300;display:none;align-items:center;justify-content:center;}
+.add-modal-wrap.open{display:flex;}
+.add-modal{background:var(--color-surface);border-radius:14px;padding:1.75rem;width:min(400px,92vw);box-shadow:0 16px 48px rgba(0,0,0,.18);}
+.add-modal h3{font-family:var(--font-display);font-weight:800;font-size:.98rem;color:var(--color-ink);margin-bottom:.85rem;}
+.add-modal-ref{background:var(--color-bg-alt);border-radius:6px;padding:.5rem .75rem;font-size:.78rem;color:var(--color-ink-soft);margin-bottom:1rem;line-height:1.4;}
+.modal-type-row{display:flex;gap:.6rem;margin-bottom:1.1rem;}
+.type-btn{flex:1;padding:.6rem;border:2px solid var(--color-border);background:var(--color-surface);border-radius:8px;font-weight:600;font-size:.82rem;cursor:pointer;transition:all 150ms;color:var(--color-ink-soft);font-family:var(--font-display);}
+.type-btn.active{border-color:var(--color-primary);color:var(--color-primary);background:var(--color-primary-light);}
+.rental-fields{display:none;flex-direction:column;gap:.7rem;margin-bottom:1.1rem;}
+.rental-fields.show{display:flex;}
+.date-label{font-size:.75rem;font-weight:600;color:var(--color-ink-soft);margin-bottom:.25rem;}
+.rental-fields input[type=date]{border:1.5px solid var(--color-border);border-radius:6px;padding:.5rem .75rem;font-size:.82rem;width:100%;box-sizing:border-box;background:var(--color-surface);color:var(--color-ink);}
+.rental-fields input[type=date]:focus{outline:none;border-color:var(--color-primary);}
+.modal-actions{display:flex;gap:.7rem;}
+.modal-confirm-btn{flex:1;background:var(--color-primary);color:#fff;border:none;border-radius:8px;padding:.72rem;font-family:var(--font-display);font-weight:700;font-size:.85rem;cursor:pointer;}
+.modal-cancel-btn{padding:.72rem 1rem;border:1.5px solid var(--color-border);background:var(--color-surface);border-radius:8px;font-size:.85rem;cursor:pointer;color:var(--color-ink-soft);}
+
 /* ── BANDEAU PROMO ── */
 .promo-bar{background:var(--color-accent);color:#fff;text-align:center;padding:.55rem 1rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;position:relative;z-index:200;}
 .promo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;}
@@ -1361,7 +1413,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.12;let
         '<p class="p-specs">'+p.specs+'</p>'+
         '<div class="p-foot">'+
           '<span class="p-price">'+(p.price==="Sur demande"?p.price:p.price+' €')+(p.price==="Sur demande"?'':' <span class="ht">HT</span>')+'</span>'+
-          '<a href="#contact" class="btn btn-primary btn-sm">Acheter</a>'+
+          '<button class="btn btn-primary btn-sm" onclick="Cart.openModal(\''+p.title+'\',\''+p.title+' — '+p.cat+'\','+(p.price==="Sur demande"?'null':p.price.replace(/\s/g,''))+')">Ajouter au panier</button>'+
         '</div>'+
       '</div>'+
     '</article>';
@@ -1543,6 +1595,213 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.12;let
   });
 
 })();
+</script>
+
+<!-- ═══════════════════ PANIER ═══════════════════════════ -->
+
+<button class="cart-fab" id="cartFab" onclick="Cart.open()">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+  Panier
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+<div class="cart-overlay" id="cartOverlay" onclick="Cart.close()"></div>
+
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-head">
+    <h2>Mon panier</h2>
+    <button class="cart-close-btn" onclick="Cart.close()">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty-msg" id="cartEmptyMsg">Votre panier est vide.</div>
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-total-row">
+      <span>Total HT estimé</span>
+      <span id="cartTotalAmt">—</span>
+    </div>
+    <div class="checkout-fields" id="checkoutFields">
+      <input type="text" id="chkSociete" placeholder="Société *">
+      <input type="text" id="chkNom" placeholder="Nom · Prénom *">
+      <input type="email" id="chkEmail" placeholder="Email *">
+      <input type="tel" placeholder="Téléphone">
+      <textarea placeholder="Commentaire (optionnel)" rows="2" style="resize:none"></textarea>
+      <button class="checkout-submit-btn" onclick="Cart.submit()">Envoyer la demande de devis</button>
+    </div>
+    <div class="checkout-ok" id="checkoutOk">
+      <strong>Demande envoyée !</strong>
+      <p>Nous vous recontactons sous 24h avec votre devis personnalisé.</p>
+    </div>
+    <button class="cart-devis-btn" id="cartDevisBtn" onclick="Cart.showCheckout()">Demander un devis</button>
+  </div>
+</aside>
+
+<div class="add-modal-wrap" id="addModalWrap">
+  <div class="add-modal">
+    <h3>Ajouter au panier</h3>
+    <div class="add-modal-ref" id="addModalRef"></div>
+    <div class="modal-type-row">
+      <button class="type-btn active" id="btnTypeAchat" onclick="Cart.setType('achat')">Achat</button>
+      <button class="type-btn" id="btnTypeLocation" onclick="Cart.setType('location')">Location</button>
+    </div>
+    <div class="rental-fields" id="rentalFields">
+      <div>
+        <div class="date-label">Date de début (J+2 minimum)</div>
+        <input type="date" id="dateDebut">
+      </div>
+      <div>
+        <div class="date-label">Date de fin</div>
+        <input type="date" id="dateFin">
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-cancel-btn" onclick="Cart.closeModal()">Annuler</button>
+      <button class="modal-confirm-btn" onclick="Cart.confirm()">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var Cart = (function(){
+  "use strict";
+  var KEY = 'dardeau_cart';
+  var items = JSON.parse(localStorage.getItem(KEY)||'[]');
+  var pending = null;
+  var mode = 'achat';
+
+  function save(){ localStorage.setItem(KEY, JSON.stringify(items)); }
+
+  function j2(){
+    var d = new Date(); d.setDate(d.getDate()+2);
+    return d.toISOString().split('T')[0];
+  }
+  function j9(){
+    var d = new Date(); d.setDate(d.getDate()+9);
+    return d.toISOString().split('T')[0];
+  }
+  function fmtDate(s){
+    if(!s) return ''; var p=s.split('-'); return p[2]+'/'+p[1]+'/'+p[0];
+  }
+
+  function updateBadge(){
+    var b = document.getElementById('cartBadge');
+    var n = items.length;
+    b.textContent = n;
+    b.classList.toggle('show', n > 0);
+  }
+
+  function render(){
+    var body = document.getElementById('cartBody');
+    var foot = document.getElementById('cartFoot');
+    var empty = document.getElementById('cartEmptyMsg');
+    if(!items.length){
+      body.innerHTML = ''; body.appendChild(empty);
+      empty.style.display = 'block';
+      foot.style.display = 'none';
+      return;
+    }
+    empty.style.display = 'none';
+    foot.style.display = 'block';
+    var total = 0; var allPriced = true;
+    var html = items.map(function(it, i){
+      var p = parseFloat((it.price||'').toString().replace(/\s/g,'').replace(',','.'));
+      if(isNaN(p)) allPriced = false; else total += p;
+      var dates = it.type==='location' && it.dateDebut
+        ? '<div class="cart-item-dates">'+fmtDate(it.dateDebut)+' → '+fmtDate(it.dateFin)+'</div>' : '';
+      return '<div class="cart-item">'+
+        '<div class="cart-item-info">'+
+          '<div class="cart-item-ref">'+it.ref+'</div>'+
+          '<div class="cart-item-name">'+it.name+'</div>'+
+          '<div class="cart-item-type">'+(it.type==='location'?'Location':'Achat')+'</div>'+
+          dates+
+        '</div>'+
+        '<div class="cart-item-price">'+(it.price ? it.price+' €' : 'Sur devis')+'</div>'+
+        '<button class="cart-item-del" onclick="Cart.remove('+i+')" title="Retirer">✕</button>'+
+      '</div>';
+    }).join('');
+    body.innerHTML = html;
+    document.getElementById('cartTotalAmt').textContent =
+      allPriced && total > 0 ? total.toLocaleString('fr-FR')+' €' : 'Sur devis';
+  }
+
+  return {
+    open: function(){
+      document.getElementById('cartSidebar').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+      render();
+    },
+    close: function(){
+      document.getElementById('cartSidebar').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('open');
+    },
+    openModal: function(ref, name, price){
+      pending = {ref:ref, name:name, price:price};
+      mode = 'achat';
+      document.getElementById('addModalRef').textContent = name + (price?' · '+price+' € HT':'');
+      document.getElementById('btnTypeAchat').classList.add('active');
+      document.getElementById('btnTypeLocation').classList.remove('active');
+      document.getElementById('rentalFields').classList.remove('show');
+      var min = j2();
+      document.getElementById('dateDebut').min = min;
+      document.getElementById('dateDebut').value = min;
+      document.getElementById('dateFin').min = min;
+      document.getElementById('dateFin').value = j9();
+      document.getElementById('addModalWrap').classList.add('open');
+    },
+    closeModal: function(){
+      document.getElementById('addModalWrap').classList.remove('open');
+      pending = null;
+    },
+    setType: function(t){
+      mode = t;
+      document.getElementById('btnTypeAchat').classList.toggle('active', t==='achat');
+      document.getElementById('btnTypeLocation').classList.toggle('active', t==='location');
+      document.getElementById('rentalFields').classList.toggle('show', t==='location');
+    },
+    confirm: function(){
+      if(!pending) return;
+      if(mode==='location'){
+        var deb = document.getElementById('dateDebut').value;
+        var fin = document.getElementById('dateFin').value;
+        if(!deb||!fin){ alert('Veuillez renseigner les deux dates.'); return; }
+        if(fin<=deb){ alert('La date de fin doit être après la date de début.'); return; }
+        pending.dateDebut = deb; pending.dateFin = fin;
+      }
+      pending.type = mode; pending.id = Date.now();
+      items.push(pending);
+      save(); updateBadge();
+      Cart.closeModal(); Cart.open();
+    },
+    remove: function(i){
+      items.splice(i,1); save(); updateBadge(); render();
+      if(!items.length) document.getElementById('cartFoot').style.display='none';
+    },
+    showCheckout: function(){
+      document.getElementById('checkoutFields').classList.add('show');
+      document.getElementById('cartDevisBtn').style.display='none';
+    },
+    submit: function(){
+      var soc = document.getElementById('chkSociete').value.trim();
+      var nom = document.getElementById('chkNom').value.trim();
+      var email = document.getElementById('chkEmail').value.trim();
+      if(!soc||!nom||!email){ alert('Merci de remplir les champs obligatoires (*).'); return; }
+      document.getElementById('checkoutFields').style.display='none';
+      document.getElementById('checkoutOk').style.display='block';
+      document.getElementById('cartTotalAmt').closest('.cart-total-row').style.display='none';
+      items=[]; save(); updateBadge();
+    },
+    init: function(){
+      updateBadge();
+      document.getElementById('dateDebut').addEventListener('change', function(){
+        var fin = document.getElementById('dateFin');
+        fin.min = this.value;
+        if(fin.value < this.value) fin.value = this.value;
+      });
+    }
+  };
+})();
+
+document.addEventListener('DOMContentLoaded', Cart.init);
 </script>
 
 </body>
