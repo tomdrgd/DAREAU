@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DARDEAU — Catalogue Obturateurs & Packers 2025</title>
+<title>DARDEAU — Catalogue Obturateurs & Packers 2026</title>
+<meta name="description" content="Catalogue DARDEAU 2026 : obturateurs, packers et accessoires pour l'inspection et l'assainissement des canalisations. Fiches techniques et tarifs professionnels.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -203,11 +204,88 @@ ul{list-style:none}
 .no-results svg{margin:0 auto 1rem;opacity:.35;width:48px;height:48px}
 .no-results h3{font-size:1.1rem;margin-bottom:.4rem}
 
+/* ─── PANIER ─────────────────────────────────────────────── */
+.cart-fab{position:fixed;bottom:2rem;right:2rem;z-index:900;background:var(--teal);color:#fff;border:none;border-radius:50px;padding:.7rem 1.2rem;font-family:'Barlow',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;box-shadow:0 4px 20px rgba(14,110,118,0.35);transition:all 180ms var(--ease);}
+.cart-fab:hover{background:var(--teal-d);transform:translateY(-2px);}
+.cart-badge{background:#fff;color:var(--teal);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;display:none;}
+.cart-badge.show{display:flex;}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1000;opacity:0;pointer-events:none;transition:opacity 200ms;}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-sidebar{position:fixed;top:0;right:0;height:100vh;width:min(420px,100vw);background:#fff;z-index:1100;transform:translateX(100%);transition:transform 260ms cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-4px 0 32px rgba(0,0,0,.12);}
+.cart-sidebar.open{transform:translateX(0);}
+.cart-head{padding:1.25rem 1.5rem;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;}
+.cart-head h2{font-family:'Barlow',sans-serif;font-weight:800;font-size:1.05rem;color:var(--teal-dd);}
+.cart-close-btn{background:none;border:none;cursor:pointer;font-size:1.3rem;color:#aaa;line-height:1;padding:0;}
+.cart-close-btn:hover{color:#333;}
+.cart-body{flex:1;overflow-y:auto;padding:1rem 1.5rem;}
+.cart-empty-msg{text-align:center;padding:3rem 1rem;color:#aaa;font-size:.88rem;}
+.cart-item{display:flex;gap:.75rem;align-items:flex-start;padding:.8rem 0;border-bottom:1px solid #f3f3f3;}
+.cart-item-info{flex:1;min-width:0;}
+.cart-item-ref{font-weight:700;font-size:.82rem;color:var(--teal-dd);}
+.cart-item-name{font-size:.75rem;color:var(--ink-s);margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cart-item-type{font-size:.7rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.04em;}
+.cart-item-dates{font-size:.7rem;color:var(--orange);margin-top:.15rem;}
+.cart-item-price{font-weight:700;font-size:.88rem;color:var(--teal);white-space:nowrap;}
+.cart-item-del{background:none;border:none;cursor:pointer;color:#ddd;font-size:.95rem;padding:0 0 0 .5rem;flex-shrink:0;}
+.cart-item-del:hover{color:#e63946;}
+.cart-foot{padding:1.25rem 1.5rem;border-top:1px solid #eee;}
+.cart-total-row{display:flex;justify-content:space-between;font-weight:700;font-size:.95rem;color:var(--teal-dd);margin-bottom:1rem;}
+.cart-devis-btn{width:100%;background:var(--teal);color:#fff;border:none;border-radius:8px;padding:.85rem;font-family:'Barlow',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:background 180ms;}
+.cart-devis-btn:hover{background:var(--teal-d);}
+.checkout-fields{display:none;flex-direction:column;gap:.6rem;margin-bottom:.85rem;}
+.checkout-fields.show{display:flex;}
+.checkout-fields input,.checkout-fields textarea{border:1.5px solid #ddd;border-radius:6px;padding:.55rem .75rem;font-size:.82rem;font-family:'Inter',sans-serif;color:var(--ink);width:100%;box-sizing:border-box;}
+.checkout-fields input:focus,.checkout-fields textarea:focus{outline:none;border-color:var(--teal);}
+.checkout-submit-btn{width:100%;background:var(--orange);color:#fff;border:none;border-radius:8px;padding:.85rem;font-family:'Barlow',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:background 180ms;}
+.checkout-submit-btn:hover{background:var(--orange-d);}
+.checkout-ok{display:none;text-align:center;padding:1.5rem 1rem;}
+.checkout-ok strong{display:block;font-family:'Barlow',sans-serif;font-weight:800;font-size:1rem;color:var(--teal);margin-bottom:.4rem;}
+.checkout-ok p{font-size:.82rem;color:var(--ink-s);}
+/* Modal ajout */
+.add-modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1300;display:none;align-items:center;justify-content:center;}
+.add-modal-wrap.open{display:flex;}
+.add-modal{background:#fff;border-radius:14px;padding:1.75rem;width:min(400px,92vw);box-shadow:0 16px 48px rgba(0,0,0,.18);}
+.add-modal h3{font-family:'Barlow',sans-serif;font-weight:800;font-size:.98rem;color:var(--teal-dd);margin-bottom:.85rem;}
+.add-modal-ref{background:#f5f5f3;border-radius:6px;padding:.5rem .75rem;font-size:.78rem;color:var(--ink-s);margin-bottom:1rem;line-height:1.4;}
+.modal-type-row{display:flex;gap:.6rem;margin-bottom:1.1rem;}
+.type-btn{flex:1;padding:.6rem;border:2px solid #e0e0e0;background:#fff;border-radius:8px;font-weight:600;font-size:.82rem;cursor:pointer;transition:all 150ms;color:var(--ink-s);font-family:'Barlow',sans-serif;}
+.type-btn.active{border-color:var(--teal);color:var(--teal);background:var(--teal-l);}
+.rental-fields{display:none;flex-direction:column;gap:.7rem;margin-bottom:1.1rem;}
+.rental-fields.show{display:flex;}
+.date-label{font-size:.75rem;font-weight:600;color:var(--ink-s);margin-bottom:.25rem;}
+.rental-fields input[type=date]{border:1.5px solid #ddd;border-radius:6px;padding:.5rem .75rem;font-size:.82rem;font-family:'Inter',sans-serif;width:100%;box-sizing:border-box;}
+.rental-fields input[type=date]:focus{outline:none;border-color:var(--teal);}
+.modal-actions{display:flex;gap:.7rem;}
+.modal-confirm-btn{flex:1;background:var(--teal);color:#fff;border:none;border-radius:8px;padding:.72rem;font-family:'Barlow',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;}
+.modal-cancel-btn{padding:.72rem 1rem;border:1.5px solid #ddd;background:#fff;border-radius:8px;font-size:.85rem;cursor:pointer;color:#666;}
+/* Bouton + dans les lignes de tarif */
+.btn-add-row{background:var(--teal);color:#fff;border:none;border-radius:4px;width:22px;height:22px;cursor:pointer;font-size:.95rem;font-weight:700;line-height:1;margin-left:.4rem;vertical-align:middle;flex-shrink:0;transition:background 150ms;}
+.btn-add-row:hover{background:var(--teal-d);}
+
+/* ─── BANDEAU PROMO ──────────────────────────────────────── */
+.promo-bar{background:var(--orange);color:#fff;text-align:center;padding:.55rem 1rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;}
+.promo-bar strong{font-weight:800;}
+
+/* ─── BADGES & ÉTOILES ───────────────────────────────────── */
+.card-badges{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;}
+.badge{display:inline-flex;align-items:center;gap:.2rem;font-size:.65rem;font-weight:700;padding:.18rem .5rem;border-radius:3px;text-transform:uppercase;letter-spacing:.04em;}
+.badge-bestseller{background:var(--orange);color:#fff;}
+.badge-new{background:var(--teal);color:#fff;}
+.badge-promo{background:#e63946;color:#fff;}
+.card-stars{display:flex;align-items:center;gap:.3rem;margin:.3rem 0;}
+.stars{color:var(--orange);font-size:.88rem;letter-spacing:1px;}
+.rating-count{font-size:.7rem;color:var(--ink-s);}
+
 /* ─── THUMB ILLUSTRATIONS ────────────────────────────────── */
 .illus{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--teal-l)}
 </style>
 </head>
 <body>
+
+<!-- BANDEAU PROMO -->
+<div class="promo-bar">
+  <strong>Livraison 48h France &amp; Europe</strong> · Tarif professionnel revendeur · Facturation 30 jours · Stock disponible immédiatement
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════
      HEADER
@@ -215,15 +293,13 @@ ul{list-style:none}
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="dardeau-site.html" class="brand" aria-label="Retour à l'accueil DARDEAU">
-      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="17.5" fill="none" stroke="var(--teal)" stroke-width="2.4"/>
-        <path d="M5 14 H35" stroke="var(--teal)" stroke-width="1" opacity="0.35"/>
-        <path d="M5 26 H35" stroke="var(--teal)" stroke-width="1" opacity="0.35"/>
-        <path d="M5 20 H35" stroke="var(--teal)" stroke-width="1.4" stroke-dasharray="2.5 3" opacity="0.6"/>
-        <circle cx="20" cy="20" r="5.2" fill="var(--orange)"/>
-        <circle cx="20" cy="20" r="2" fill="var(--surface)"/>
+      <svg width="140" height="44" viewBox="0 0 280 88" aria-hidden="true">
+        <path d="M10,18 Q70,2 140,18 Q210,34 270,18 L270,62 Q210,78 140,62 Q70,46 10,62 Z" fill="var(--teal)" opacity="0.12"/>
+        <path d="M10,18 Q70,2 140,18 Q210,34 270,18 L270,62 Q210,78 140,62 Q70,46 10,62 Z" fill="none" stroke="var(--teal)" stroke-width="2"/>
+        <path d="M10,30 Q70,14 140,30 Q210,46 270,30" fill="none" stroke="var(--teal)" stroke-width="0.8" opacity="0.35"/>
+        <text x="140" y="50" text-anchor="middle" font-family="'Barlow',sans-serif" font-weight="800" font-size="26" letter-spacing="4" fill="var(--teal)">DARDEAU</text>
+        <path d="M55,64 Q100,58 140,64 Q180,70 225,64" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.75"/>
       </svg>
-      <span class="brand-text"><strong>DARDEAU</strong><span>Inspection · Assainissement</span></span>
     </a>
     <div class="header-cta">
       <a href="dardeau-site.html" class="back-link">
@@ -242,12 +318,8 @@ ul{list-style:none}
 <section class="cat-hero">
   <div class="ruler" aria-hidden="true"></div>
   <div class="container">
-    <h1>Catalogue <span>Obturateurs &amp; Packers</span> 2025</h1>
+    <h1>Catalogue <span>Obturateurs &amp; Packers</span> 2026</h1>
     <p>Tarif professionnel revendeur · Tous prix en <strong>€ HT</strong> · Livraison 48h France &amp; Europe · Facturation 30 jours</p>
-    <div class="inflation-note">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
-      Tarifs révisés 2025 · Hausse de +32 % appliquée depuis le catalogue 2017 (inflation industrielle INSEE + COVID + énergie)
-    </div>
     <div class="stat-row">
       <div class="stat"><span class="n">180<span>+</span></span><span class="l">Références</span></div>
       <div class="stat"><span class="n">1,5<span> – 6 bar</span></span><span class="l">Gammes de pression</span></div>
@@ -309,12 +381,14 @@ ul{list-style:none}
                    onerror="this.style.display='none';this.parentElement.innerHTML=document.getElementById('svg-simple').innerHTML">
             </div>
             <div class="card-content">
+              <div class="card-badges"><span class="badge badge-bestseller">⭐ Best-seller</span></div>
+              <div class="card-stars"><span class="stars">★★★★★</span><span class="rating-count">4.9 (214 avis)</span></div>
               <span class="card-cat">Obturateur Gonflable Simple</span>
               <h3 class="card-title">Obturateur Simple — Série KB</h3>
               <p class="card-desc">Corps en caoutchouc SBR+NR renforcé, multi-tailles, conforme EN 1610. Idéal pour obturation et test d'étanchéité des réseaux gravitaires.</p>
               <div class="price-table">
                 <table>
-                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pression</th><th>Prix 2025 HT</th></tr></thead>
+                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pression</th><th>Prix 2026 HT</th></tr></thead>
                   <tbody>
                     <tr data-search="kb3570"><td class="ref">KB3570</td><td>Ø35–Ø70</td><td class="pres">2 bar</td><td class="price">69 € <span class="ht">HT</span></td></tr>
                     <tr data-search="kb50100"><td class="ref">KB50100</td><td>Ø50–Ø100</td><td class="pres">1,5 bar</td><td class="price">83 € <span class="ht">HT</span></td></tr>
@@ -352,6 +426,8 @@ ul{list-style:none}
             <img src="https://www.plugco.net/files/2018/12/pipe-plug-plugco-3.jpg" alt="Obturateur simple nitrile" onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'70\' ry=\'45\' fill=\'none\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'70\' ry=\'45\' fill=\'rgba(14,110,118,0.08)\'/><circle cx=\'150\' cy=\'85\' r=\'18\' fill=\'none\' stroke=\'#E07B39\' stroke-width=\'2\' stroke-dasharray=\'4 3\'/><line x1=\'150\' y1=\'40\' x2=\'150\' y2=\'25\' stroke=\'#0E6E76\' stroke-width=\'2\' stroke-linecap=\'round\'/><circle cx=\'150\' cy=\'22\' r=\'3.5\' fill=\'#E07B39\'/><text x=\'150\' y=\'160\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>OBTURATEUR NITRILE</text></svg>'">
           </div>
           <div class="card-body">
+            <div class="card-badges"><span class="badge badge-bestseller">⭐ Best-seller</span></div>
+            <div class="card-stars"><span class="stars">★★★★★</span><span class="rating-count">4.8 (97 avis)</span></div>
             <span class="card-cat">Obturateur Simple · Nitrile</span>
             <h3 class="card-title">Obturateur Simple Nitrile — Série KB…N</h3>
             <p class="card-desc">Caoutchouc nitrile renforcé pour milieux hydrocarbures, pétrole et gaz. Résistant aux solvants pétrochimiques.</p>
@@ -438,12 +514,14 @@ ul{list-style:none}
                    onerror="this.style.display='none'">
             </div>
             <div class="card-content">
+              <div class="card-badges"><span class="badge badge-bestseller">⭐ Best-seller</span></div>
+              <div class="card-stars"><span class="stars">★★★★★</span><span class="rating-count">4.9 (183 avis)</span></div>
               <span class="card-cat">Obturateur Traversant avec Bypass</span>
               <h3 class="card-title">Obturateur Traversant — Série KTB</h3>
               <p class="card-desc">Identique à l'obturateur simple avec raccord by-pass intégré pour dérivation du flux ou remplissage sans accès regard. Versions inox (I) disponibles.</p>
               <div class="price-table">
                 <table>
-                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Prix 2025 HT</th></tr></thead>
+                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Prix 2026 HT</th></tr></thead>
                   <tbody>
                     <tr><td class="ref">KTB3570</td><td>Ø35–Ø70</td><td class="pres">2 bar</td><td class="price">207 € <span class="ht">HT</span></td></tr>
                     <tr><td class="ref">KTB50100</td><td>Ø50–Ø100</td><td class="pres">1,5 bar</td><td class="price">244 € <span class="ht">HT</span></td></tr>
@@ -494,6 +572,8 @@ ul{list-style:none}
                  onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'40\' ry=\'42\' fill=\'rgba(14,110,118,0.15)\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><line x1=\'150\' y1=\'43\' x2=\'150\' y2=\'28\' stroke=\'#0E6E76\' stroke-width=\'2\'/><circle cx=\'150\' cy=\'24\' r=\'4\' fill=\'#E07B39\'/><text x=\'150\' y=\'158\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>COURT SIMPLE</text></svg>'">
           </div>
           <div class="card-body">
+            <div class="card-badges"><span class="badge badge-promo">Promo</span></div>
+            <div class="card-stars"><span class="stars">★★★★</span><span class="rating-count">4.6 (58 avis)</span></div>
             <span class="card-cat">Court Simple · 2,5 bar</span>
             <h3 class="card-title">Obturateur Court Simple — CKB / KBM</h3>
             <p class="card-desc">Profil court pour raccords et tronçons courts. Diamètres fixes (CKB) et multi-tailles (KBM).</p>
@@ -584,6 +664,8 @@ ul{list-style:none}
                  onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><rect x=\'110\' y=\'52\' width=\'80\' height=\'65\' rx=\'8\' fill=\'rgba(14,110,118,0.2)\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><rect x=\'95\' y=\'68\' width=\'110\' height=\'33\' rx=\'16\' fill=\'none\' stroke=\'#E07B39\' stroke-width=\'2\'/><text x=\'150\' y=\'140\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>HP — 6 BAR</text></svg>'">
           </div>
           <div class="card-body">
+            <div class="card-badges"><span class="badge badge-new">Nouveau</span></div>
+            <div class="card-stars"><span class="stars">★★★★★</span><span class="rating-count">4.7 (34 avis)</span></div>
             <span class="card-cat">Haute Pression · 6 bar · Corps métal</span>
             <h3 class="card-title">Obturateur Haute Pression — Série YBKB</h3>
             <p class="card-desc">Corps métallique lié à caoutchouc extra-renforcé. Pour réseaux sous pression, tests 6 bar.</p>
@@ -918,7 +1000,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content active" id="tab-btb">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">BTB10015010</td><td>Ø100–150</td><td>2,5 bar</td><td>1000 mm</td><td class="price">458 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">BTB10015015</td><td>Ø100–150</td><td>2,5 bar</td><td>1500 mm</td><td class="price">549 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">BTB10015020</td><td>Ø100–150</td><td>2,5 bar</td><td>2000 mm</td><td class="price">695 € <span class="ht">HT</span></td></tr>
@@ -946,7 +1028,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content" id="tab-tb25">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">TB255006</td><td>Ø25–50</td><td>3 bar</td><td>600</td><td class="price">161 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB255010</td><td>Ø25–50</td><td>3 bar</td><td>1000</td><td class="price">166 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB255015</td><td>Ø25–50</td><td>3 bar</td><td>1500</td><td class="price">211 € <span class="ht">HT</span></td></tr>
@@ -963,7 +1045,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content" id="tab-tb100">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">TB7010006</td><td>Ø70–100</td><td>3 bar</td><td>600</td><td class="price">139 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB7010010</td><td>Ø70–100</td><td>3 bar</td><td>1000</td><td class="price">174 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB7010020</td><td>Ø70–100</td><td>3 bar</td><td>2000</td><td class="price">264 € <span class="ht">HT</span></td></tr>
@@ -984,7 +1066,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content" id="tab-tb300">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">TB30040015</td><td>Ø300–400</td><td>1,5 bar</td><td>1500</td><td class="price">695 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB30040020</td><td>Ø300–400</td><td>1,5 bar</td><td>2000</td><td class="price">735 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">TB30040030</td><td>Ø300–400</td><td>1,5 bar</td><td>3000</td><td class="price">841 € <span class="ht">HT</span></td></tr>
@@ -1001,7 +1083,7 @@ ul{list-style:none}
 
         <div class="packer-tab-content" id="tab-dp">
           <div class="packer-table-inner">
-            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2026 HT</th></tr></thead><tbody>
               <tr><td class="ref">DP5070</td><td>Ø50–70</td><td>2 bar</td><td>1200 mm</td><td class="price">303 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">DP7080</td><td>Ø70–80</td><td>2 bar</td><td>1200 mm</td><td class="price">358 € <span class="ht">HT</span></td></tr>
               <tr><td class="ref">DP100130</td><td>Ø100–130</td><td>2 bar</td><td>1200 mm</td><td class="price">408 € <span class="ht">HT</span></td></tr>
@@ -1052,8 +1134,8 @@ ul{list-style:none}
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2025 DARDEAU — Catalogue professionnel revendeur.</span>
-      <span>Prix HT · Révision tarifaire 2025 · Susceptible d'évolution</span>
+      <span>&copy; 2026 DARDEAU — Catalogue professionnel revendeur.</span>
+      <span>Prix HT · Révision tarifaire 2026 · Susceptible d'évolution</span>
     </div>
   </div>
 </footer>
@@ -1128,6 +1210,244 @@ searchInput.addEventListener("input",function(){
 });
 
 })();
+</script>
+
+<!-- ═══════════════════ PANIER ═══════════════════════════ -->
+
+<!-- Bouton panier flottant -->
+<button class="cart-fab" id="cartFab" onclick="Cart.open()">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+  Panier
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+<!-- Overlay -->
+<div class="cart-overlay" id="cartOverlay" onclick="Cart.close()"></div>
+
+<!-- Sidebar panier -->
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-head">
+    <h2>Mon panier</h2>
+    <button class="cart-close-btn" onclick="Cart.close()">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty-msg" id="cartEmptyMsg">Votre panier est vide.</div>
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-total-row">
+      <span>Total HT estimé</span>
+      <span id="cartTotalAmt">—</span>
+    </div>
+    <div class="checkout-fields" id="checkoutFields">
+      <input type="text" id="chkSociete" placeholder="Société *">
+      <input type="text" id="chkNom" placeholder="Nom · Prénom *">
+      <input type="email" id="chkEmail" placeholder="Email *">
+      <input type="tel" placeholder="Téléphone">
+      <textarea placeholder="Commentaire (optionnel)" rows="2" style="resize:none"></textarea>
+      <button class="checkout-submit-btn" onclick="Cart.submit()">Envoyer la demande de devis</button>
+    </div>
+    <div class="checkout-ok" id="checkoutOk">
+      <strong>Demande envoyée !</strong>
+      <p>Nous vous recontactons sous 24h avec votre devis personnalisé.</p>
+    </div>
+    <button class="cart-devis-btn" id="cartDevisBtn" onclick="Cart.showCheckout()">Demander un devis</button>
+  </div>
+</aside>
+
+<!-- Modal ajout au panier -->
+<div class="add-modal-wrap" id="addModalWrap">
+  <div class="add-modal">
+    <h3>Ajouter au panier</h3>
+    <div class="add-modal-ref" id="addModalRef"></div>
+    <div class="modal-type-row">
+      <button class="type-btn active" id="btnTypeAchat" onclick="Cart.setType('achat')">Achat</button>
+      <button class="type-btn" id="btnTypeLocation" onclick="Cart.setType('location')">Location</button>
+    </div>
+    <div class="rental-fields" id="rentalFields">
+      <div>
+        <div class="date-label">Date de début (J+2 minimum)</div>
+        <input type="date" id="dateDebut">
+      </div>
+      <div>
+        <div class="date-label">Date de fin</div>
+        <input type="date" id="dateFin">
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-cancel-btn" onclick="Cart.closeModal()">Annuler</button>
+      <button class="modal-confirm-btn" onclick="Cart.confirm()">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var Cart = (function(){
+  "use strict";
+  var KEY = 'dardeau_cart';
+  var items = JSON.parse(localStorage.getItem(KEY)||'[]');
+  var pending = null;
+  var mode = 'achat';
+
+  function save(){ localStorage.setItem(KEY, JSON.stringify(items)); }
+
+  function j2(){
+    var d = new Date(); d.setDate(d.getDate()+2);
+    return d.toISOString().split('T')[0];
+  }
+  function j9(){
+    var d = new Date(); d.setDate(d.getDate()+9);
+    return d.toISOString().split('T')[0];
+  }
+  function fmtDate(s){
+    if(!s) return ''; var p=s.split('-'); return p[2]+'/'+p[1]+'/'+p[0];
+  }
+  function fmtPrice(n){
+    if(!n) return 'Sur devis';
+    return parseFloat(n).toLocaleString('fr-FR')+'&nbsp;€&nbsp;HT';
+  }
+
+  function updateBadge(){
+    var b = document.getElementById('cartBadge');
+    var n = items.length;
+    b.textContent = n;
+    b.classList.toggle('show', n > 0);
+  }
+
+  function render(){
+    var body = document.getElementById('cartBody');
+    var foot = document.getElementById('cartFoot');
+    var empty = document.getElementById('cartEmptyMsg');
+    if(!items.length){
+      body.innerHTML = ''; body.appendChild(empty);
+      empty.style.display = 'block';
+      foot.style.display = 'none';
+      return;
+    }
+    empty.style.display = 'none';
+    foot.style.display = 'block';
+    var total = 0; var allPriced = true;
+    var html = items.map(function(it, i){
+      var p = parseFloat((it.price||'').toString().replace(/\s/g,'').replace(',','.'));
+      if(isNaN(p)) allPriced = false; else total += p;
+      var dates = it.type==='location' && it.dateDebut
+        ? '<div class="cart-item-dates">'+fmtDate(it.dateDebut)+' → '+fmtDate(it.dateFin)+'</div>' : '';
+      return '<div class="cart-item">'+
+        '<div class="cart-item-info">'+
+          '<div class="cart-item-ref">'+it.ref+'</div>'+
+          '<div class="cart-item-name">'+it.name+'</div>'+
+          '<div class="cart-item-type">'+(it.type==='location'?'Location':'Achat')+'</div>'+
+          dates+
+        '</div>'+
+        '<div class="cart-item-price">'+(it.price ? it.price+' €' : 'Sur devis')+'</div>'+
+        '<button class="cart-item-del" onclick="Cart.remove('+i+')" title="Retirer">✕</button>'+
+      '</div>';
+    }).join('');
+    body.innerHTML = html;
+    var totalEl = document.getElementById('cartTotalAmt');
+    totalEl.textContent = allPriced && total > 0 ? total.toLocaleString('fr-FR')+' €' : 'Sur devis';
+  }
+
+  /* ── API publique ── */
+  return {
+    open: function(){
+      document.getElementById('cartSidebar').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+      render();
+    },
+    close: function(){
+      document.getElementById('cartSidebar').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('open');
+    },
+    openModal: function(ref, name, price){
+      pending = {ref:ref, name:name, price:price};
+      mode = 'achat';
+      document.getElementById('addModalRef').textContent = ref + (name?' — '+name:'') + (price?' · '+price+' € HT':'');
+      document.getElementById('btnTypeAchat').classList.add('active');
+      document.getElementById('btnTypeLocation').classList.remove('active');
+      document.getElementById('rentalFields').classList.remove('show');
+      var min = j2();
+      document.getElementById('dateDebut').min = min;
+      document.getElementById('dateDebut').value = min;
+      document.getElementById('dateFin').min = min;
+      document.getElementById('dateFin').value = j9();
+      document.getElementById('addModalWrap').classList.add('open');
+    },
+    closeModal: function(){
+      document.getElementById('addModalWrap').classList.remove('open');
+      pending = null;
+    },
+    setType: function(t){
+      mode = t;
+      document.getElementById('btnTypeAchat').classList.toggle('active', t==='achat');
+      document.getElementById('btnTypeLocation').classList.toggle('active', t==='location');
+      document.getElementById('rentalFields').classList.toggle('show', t==='location');
+    },
+    confirm: function(){
+      if(!pending) return;
+      if(mode==='location'){
+        var deb = document.getElementById('dateDebut').value;
+        var fin = document.getElementById('dateFin').value;
+        if(!deb||!fin){ alert('Veuillez renseigner les deux dates.'); return; }
+        if(fin<=deb){ alert('La date de fin doit être après la date de début.'); return; }
+        pending.dateDebut = deb; pending.dateFin = fin;
+      }
+      pending.type = mode;
+      pending.id = Date.now();
+      items.push(pending);
+      save(); updateBadge();
+      Cart.closeModal(); Cart.open();
+    },
+    remove: function(i){
+      items.splice(i,1); save(); updateBadge(); render();
+      if(!items.length) document.getElementById('cartFoot').style.display='none';
+    },
+    showCheckout: function(){
+      document.getElementById('checkoutFields').classList.add('show');
+      document.getElementById('cartDevisBtn').style.display='none';
+    },
+    submit: function(){
+      var soc = document.getElementById('chkSociete').value.trim();
+      var nom = document.getElementById('chkNom').value.trim();
+      var email = document.getElementById('chkEmail').value.trim();
+      if(!soc||!nom||!email){ alert('Merci de remplir les champs obligatoires (*).'); return; }
+      document.getElementById('checkoutFields').style.display='none';
+      document.getElementById('checkoutOk').style.display='block';
+      document.getElementById('cartTotalAmt').closest('.cart-total-row').style.display='none';
+      items=[]; save(); updateBadge();
+    },
+    init: function(){
+      updateBadge();
+      /* Injection des boutons + dans chaque ligne de tarif */
+      document.querySelectorAll('.prod-card tbody tr, .card-inner tbody tr').forEach(function(row){
+        if(row.querySelector('th')) return;
+        var priceCell = row.querySelector('.price');
+        if(!priceCell || priceCell.querySelector('.btn-add-row')) return;
+        var ref = (row.querySelector('.ref')||{}).textContent||'—';
+        var rawPrice = priceCell.textContent.replace(/[^0-9,\s]/g,'').replace(/\s/g,'').replace(',','.').trim();
+        var price = parseFloat(rawPrice)||null;
+        var card = row.closest('.prod-card,.card-inner');
+        var name = card ? (card.querySelector('.card-title,h3')||{}).textContent||'' : '';
+        var btn = document.createElement('button');
+        btn.className = 'btn-add-row';
+        btn.title = 'Ajouter au panier';
+        btn.textContent = '+';
+        btn.onclick = function(e){
+          e.stopPropagation();
+          Cart.openModal(ref.trim(), name.trim(), price);
+        };
+        priceCell.appendChild(btn);
+      });
+      /* Synchronisation date fin selon date début */
+      document.getElementById('dateDebut').addEventListener('change', function(){
+        var fin = document.getElementById('dateFin');
+        fin.min = this.value;
+        if(fin.value < this.value) fin.value = this.value;
+      });
+    }
+  };
+})();
+
+document.addEventListener('DOMContentLoaded', Cart.init);
 </script>
 </body>
 </html>
