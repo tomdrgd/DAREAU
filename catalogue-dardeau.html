@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DARDEAU — Catalogue Obturateurs & Packers 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─────────────────────────────────────────────── */
+:root{
+  --teal:#0E6E76; --teal-d:#0A4F57; --teal-dd:#062F34;
+  --teal-l:#E2F0EF; --teal-t:#CFE7E5;
+  --orange:#E07B39; --orange-d:#C2632A;
+  --bg:#F7F6F3; --bg2:#EEEBE3;
+  --surface:#FFFFFF;
+  --ink:#142220; --ink-s:#52615E; --ink-f:#8B968F;
+  --border:#E1DDD2; --border-s:#CFCABC;
+  --footer:#071929;
+  --r:14px; --rb:8px; --rpill:999px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --hh:74px;
+  --shadow-sm:0 1px 2px rgba(10,79,87,0.08);
+  --shadow-md:0 6px 20px rgba(10,79,87,0.12);
+  --shadow-lg:0 16px 40px rgba(10,79,87,0.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hh)+12px)}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Barlow',sans-serif;font-weight:800;line-height:1.1;letter-spacing:-0.01em}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+img{max-width:100%;display:block}
+ul{list-style:none}
+:focus-visible{outline:2.5px solid var(--orange);outline-offset:2px}
+.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
+
+/* ─── HEADER ────────────────────────────────────────────── */
+.site-header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(247,246,243,0.9);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 1px 0 rgba(10,79,87,0.06);
+  transition:box-shadow 220ms var(--ease);
+}
+.site-header.scrolled{box-shadow:0 8px 24px rgba(10,79,87,0.14)}
+.header-inner{height:var(--hh);display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand-text strong{font-family:'Barlow',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:.02em}
+.brand-text span{display:block;font-size:.68rem;color:var(--ink-s);text-transform:uppercase;letter-spacing:.06em}
+.header-cta{display:flex;align-items:center;gap:1rem}
+.header-cta a{font-size:.82rem;font-weight:600;color:var(--ink-s)}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.25rem;border-radius:var(--rb);font-family:'Barlow',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.01em;white-space:nowrap;transition:all 180ms var(--ease)}
+.btn-accent{background:var(--orange);color:#fff}
+.btn-accent:hover{background:var(--orange-d)}
+.btn-outline{border:1.5px solid var(--border-s);color:var(--ink)}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:600;color:var(--teal)}
+.back-link svg{flex-shrink:0}
+
+/* ─── HERO-BANNER ────────────────────────────────────────── */
+.cat-hero{
+  background:linear-gradient(160deg,var(--teal-dd) 0%,var(--teal-d) 50%,var(--teal) 100%);
+  color:#fff;padding:3.5rem 0 2.5rem;position:relative;overflow:hidden;
+}
+.cat-hero .ruler{position:absolute;top:0;bottom:0;left:0;width:30px;background-image:repeating-linear-gradient(to bottom,rgba(255,255,255,0.2) 0 1.5px,transparent 1.5px 44px);opacity:.5}
+.cat-hero .container{position:relative;z-index:1}
+.cat-hero h1{font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:.6rem}
+.cat-hero h1 span{color:var(--orange)}
+.cat-hero p{color:rgba(255,255,255,.78);font-size:1rem;max-width:56ch;margin-bottom:1.5rem}
+.inflation-note{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:var(--rpill);padding:.4rem 1rem;font-size:.75rem;font-weight:600}
+.inflation-note svg{color:var(--orange);flex-shrink:0}
+.stat-row{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2rem}
+.stat{display:flex;flex-direction:column}
+.stat .n{font-family:'Barlow',sans-serif;font-weight:800;font-size:1.6rem;line-height:1}
+.stat .n span{color:var(--orange)}
+.stat .l{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.7);margin-top:.2rem}
+
+/* ─── FILTERS ────────────────────────────────────────────── */
+.filters-bar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:var(--hh);z-index:100}
+.filters-inner{display:flex;align-items:center;gap:1rem;padding-block:.85rem;flex-wrap:wrap}
+.search-wrap{position:relative;flex:1;min-width:240px;max-width:360px}
+.search-wrap svg{position:absolute;left:.8rem;top:50%;transform:translateY(-50%);color:var(--ink-f);pointer-events:none}
+#searchInput{width:100%;padding:.6rem .75rem .6rem 2.3rem;border:1.5px solid var(--border);border-radius:var(--rb);font-size:.85rem;background:var(--bg);color:var(--ink);transition:border-color 180ms var(--ease)}
+#searchInput:focus{border-color:var(--teal);outline:none}
+.filter-chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.chip{padding:.4rem .9rem;border-radius:var(--rpill);font-size:.75rem;font-weight:700;border:1.5px solid var(--border);color:var(--ink-s);transition:all 180ms var(--ease);cursor:pointer}
+.chip.active,.chip:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+.results-count{margin-left:auto;font-size:.78rem;color:var(--ink-f);white-space:nowrap}
+
+/* ─── MAIN LAYOUT ────────────────────────────────────────── */
+.catalogue-main{padding-block:2.5rem}
+.section-group{margin-bottom:3.5rem}
+.section-group[data-hidden="true"]{display:none}
+
+/* ─── SECTION HEADER ────────────────────────────────────── */
+.section-title{
+  display:flex;align-items:center;gap:.75rem;
+  font-size:1.3rem;margin-bottom:1.25rem;padding-bottom:.75rem;
+  border-bottom:2px solid var(--teal-l);
+}
+.section-title .badge{
+  background:var(--teal);color:#fff;font-size:.68rem;font-weight:700;
+  padding:.2rem .6rem;border-radius:var(--rpill);text-transform:uppercase;letter-spacing:.06em;flex-shrink:0;
+}
+.section-title .count{font-size:.8rem;font-weight:600;color:var(--ink-f);margin-left:auto}
+
+/* ─── PRODUCT CARDS ─────────────────────────────────────── */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+
+/* Wide card (for featured/hero product per section) */
+.prod-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform 220ms var(--ease),box-shadow 220ms var(--ease),border-color 220ms var(--ease);
+}
+.prod-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--teal-t)}
+.prod-card[data-hidden="true"]{display:none}
+
+.card-thumb{aspect-ratio:16/9;overflow:hidden;background:var(--teal-l);position:relative}
+.card-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 320ms var(--ease)}
+.prod-card:hover .card-thumb img{transform:scale(1.05)}
+.card-thumb .thumb-svg{width:100%;height:100%}
+
+.card-body{padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column;gap:.4rem}
+.card-cat{font-size:.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.08em}
+.card-title{font-family:'Barlow',sans-serif;font-weight:700;font-size:1rem;line-height:1.2}
+.card-desc{font-size:.8rem;color:var(--ink-s);line-height:1.5}
+
+/* Price table inside card */
+.price-table{margin-top:.6rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:.76rem}
+.price-table table{width:100%;border-collapse:collapse}
+.price-table thead th{background:var(--bg2);color:var(--ink-s);font-weight:700;font-size:.65rem;text-transform:uppercase;letter-spacing:.04em;padding:.35rem .5rem;text-align:left}
+.price-table tbody tr{border-top:1px solid var(--border)}
+.price-table tbody tr:hover{background:var(--teal-l)}
+.price-table tbody td{padding:.35rem .5rem;vertical-align:middle}
+.price-table .ref{font-weight:600;color:var(--teal-d);font-family:'Barlow',sans-serif;font-size:.72rem}
+.price-table .price{font-family:'Barlow',sans-serif;font-weight:800;color:var(--ink);white-space:nowrap}
+.price-table .price .ht{font-size:.6rem;font-weight:600;color:var(--ink-f)}
+.price-table .pres{font-size:.68rem;color:var(--ink-f)}
+
+/* Single-price card footer */
+.card-foot{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.1rem;border-top:1px solid var(--border);margin-top:auto}
+.card-price{font-family:'Barlow',sans-serif;font-weight:800;font-size:1.15rem}
+.card-price small{font-size:.68rem;font-weight:600;color:var(--ink-f)}
+.btn-buy{display:inline-flex;align-items:center;gap:.3rem;font-family:'Barlow',sans-serif;font-weight:700;font-size:.78rem;color:var(--teal);padding:.45rem .9rem;border:1.5px solid var(--teal-t);border-radius:6px;transition:all 180ms var(--ease)}
+.btn-buy:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.btn-buy svg{transition:transform 180ms var(--ease)}
+.btn-buy:hover svg{transform:translateX(2px)}
+
+/* Wide-table card: occupies full width, shows big table */
+.prod-card.wide-card{grid-column:1/-1}
+.wide-card .card-inner{display:grid;grid-template-columns:300px 1fr;gap:0}
+.wide-card .card-img-col{background:var(--teal-l);display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.wide-card .card-img-col img{max-height:200px;object-fit:contain}
+.wide-card .card-content{padding:1.25rem 1.5rem}
+.wide-card .price-table{margin-top:.75rem}
+@media(max-width:760px){
+  .wide-card .card-inner{grid-template-columns:1fr}
+  .wide-card .card-img-col{display:none}
+}
+
+/* ─── PACKER SECTION ─────────────────────────────────────── */
+.packer-table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.packer-tabs{display:flex;border-bottom:1px solid var(--border)}
+.packer-tab{padding:.65rem 1.1rem;font-size:.8rem;font-weight:700;color:var(--ink-s);border-bottom:2.5px solid transparent;margin-bottom:-1px;transition:all 180ms var(--ease);cursor:pointer}
+.packer-tab.active,.packer-tab:hover{color:var(--teal);border-bottom-color:var(--teal)}
+.packer-tab-content{display:none;padding:.5rem}
+.packer-tab-content.active{display:block}
+.packer-table-inner{overflow-x:auto}
+.packer-table-inner table{width:100%;border-collapse:collapse;font-size:.78rem}
+.packer-table-inner thead th{background:var(--bg2);padding:.5rem .75rem;text-align:left;font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-s);white-space:nowrap}
+.packer-table-inner tbody tr{border-top:1px solid var(--border)}
+.packer-table-inner tbody tr:hover{background:var(--teal-l)}
+.packer-table-inner tbody td{padding:.4rem .75rem;vertical-align:middle}
+.packer-table-inner .ref{font-weight:700;color:var(--teal-d);font-family:'Barlow',sans-serif}
+.packer-table-inner .price{font-family:'Barlow',sans-serif;font-weight:800;white-space:nowrap}
+.packer-table-inner .price small{font-size:.6rem;color:var(--ink-f)}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+.site-footer{background:var(--footer);color:#C7D4D8;padding:2.5rem 0 1.5rem;margin-top:4rem}
+.footer-inner{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start}
+.footer-brand strong{font-family:'Barlow',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.footer-brand p{font-size:.78rem;margin-top:.4rem;max-width:30ch}
+.footer-links h4{font-family:'Barlow',sans-serif;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:#fff;margin-bottom:.6rem}
+.footer-links ul{display:flex;flex-direction:column;gap:.4rem}
+.footer-links a{font-size:.8rem;transition:color 180ms var(--ease)}
+.footer-links a:hover{color:#fff}
+.footer-bottom{margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem;font-size:.72rem;color:rgba(199,212,216,.6)}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:640px){
+  .prod-grid{grid-template-columns:1fr}
+  .stat-row{gap:1.25rem}
+  .header-cta .btn-outline{display:none}
+}
+@media(max-width:480px){.filters-inner{flex-direction:column;align-items:flex-start}}
+
+/* ─── EMPTY STATE ────────────────────────────────────────── */
+.no-results{text-align:center;padding:3rem 1rem;color:var(--ink-f);display:none}
+.no-results svg{margin:0 auto 1rem;opacity:.35;width:48px;height:48px}
+.no-results h3{font-size:1.1rem;margin-bottom:.4rem}
+
+/* ─── THUMB ILLUSTRATIONS ────────────────────────────────── */
+.illus{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--teal-l)}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="dardeau-site.html" class="brand" aria-label="Retour à l'accueil DARDEAU">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="17.5" fill="none" stroke="var(--teal)" stroke-width="2.4"/>
+        <path d="M5 14 H35" stroke="var(--teal)" stroke-width="1" opacity="0.35"/>
+        <path d="M5 26 H35" stroke="var(--teal)" stroke-width="1" opacity="0.35"/>
+        <path d="M5 20 H35" stroke="var(--teal)" stroke-width="1.4" stroke-dasharray="2.5 3" opacity="0.6"/>
+        <circle cx="20" cy="20" r="5.2" fill="var(--orange)"/>
+        <circle cx="20" cy="20" r="2" fill="var(--surface)"/>
+      </svg>
+      <span class="brand-text"><strong>DARDEAU</strong><span>Inspection · Assainissement</span></span>
+    </a>
+    <div class="header-cta">
+      <a href="dardeau-site.html" class="back-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Retour au site
+      </a>
+      <a href="dardeau-site.html#contact" class="btn btn-outline">Contact</a>
+      <a href="dardeau-site.html#contact" class="btn btn-accent">Commander</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO CATALOGUE
+═══════════════════════════════════════════════════════════ -->
+<section class="cat-hero">
+  <div class="ruler" aria-hidden="true"></div>
+  <div class="container">
+    <h1>Catalogue <span>Obturateurs &amp; Packers</span> 2025</h1>
+    <p>Tarif professionnel revendeur · Tous prix en <strong>€ HT</strong> · Livraison 48h France &amp; Europe · Facturation 30 jours</p>
+    <div class="inflation-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+      Tarifs révisés 2025 · Hausse de +32 % appliquée depuis le catalogue 2017 (inflation industrielle INSEE + COVID + énergie)
+    </div>
+    <div class="stat-row">
+      <div class="stat"><span class="n">180<span>+</span></span><span class="l">Références</span></div>
+      <div class="stat"><span class="n">1,5<span> – 6 bar</span></span><span class="l">Gammes de pression</span></div>
+      <div class="stat"><span class="n">Ø35<span> – 2200mm</span></span><span class="l">Diamètres couverts</span></div>
+      <div class="stat"><span class="n">EN 1610</span><span class="l">Conforme</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FILTERS
+═══════════════════════════════════════════════════════════ -->
+<div class="filters-bar" id="filtersBar">
+  <div class="container filters-inner">
+    <div class="search-wrap">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="searchInput" placeholder="Référence, désignation, diamètre…" aria-label="Rechercher un produit">
+    </div>
+    <div class="filter-chips" id="filterChips" role="group" aria-label="Filtrer par catégorie">
+      <button class="chip active" data-cat="all">Tous</button>
+      <button class="chip" data-cat="simple">Obturateurs Simples</button>
+      <button class="chip" data-cat="traversant">Obturateurs Traversants</button>
+      <button class="chip" data-cat="court">Obturateurs Courts</button>
+      <button class="chip" data-cat="special">Spéciaux &amp; HP</button>
+      <button class="chip" data-cat="regard">Regard / Ovoïde</button>
+      <button class="chip" data-cat="packer">Packers</button>
+    </div>
+    <span class="results-count" id="resultsCount"></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CATALOGUE
+═══════════════════════════════════════════════════════════ -->
+<main class="catalogue-main">
+  <div class="container">
+
+    <div class="no-results" id="noResults">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M8 11h6"/></svg>
+      <h3>Aucun résultat</h3>
+      <p>Essayez un autre terme ou réinitialisez les filtres.</p>
+    </div>
+
+    <!-- ─── 1. OBTURATEURS SIMPLES ──────────────────────────── -->
+    <div class="section-group" data-cat="simple" id="grp-simple">
+      <div class="section-title">
+        <h2>Obturateurs Simples</h2>
+        <span class="badge">PlugCo · Turquie</span>
+        <span class="count">KB série · Pression 1 – 2,5 bar</span>
+      </div>
+
+      <div class="prod-grid">
+        <!-- CARD: Obturateur Simple Standard -->
+        <div class="prod-card wide-card" data-search="obturateur simple kb3570 kb50100 kb70150 kb100200 kb150300 kb200400 kb200500 kb300600 kb5001000 kb6001200 kb6001600 kb10002000 1.5 2.5 bar">
+          <div class="card-inner">
+            <div class="card-img-col">
+              <img src="https://www.plugco.net/files/2018/12/pipe-plug-by-plugco.jpg"
+                   alt="Obturateur gonflable simple PlugCo"
+                   onerror="this.style.display='none';this.parentElement.innerHTML=document.getElementById('svg-simple').innerHTML">
+            </div>
+            <div class="card-content">
+              <span class="card-cat">Obturateur Gonflable Simple</span>
+              <h3 class="card-title">Obturateur Simple — Série KB</h3>
+              <p class="card-desc">Corps en caoutchouc SBR+NR renforcé, multi-tailles, conforme EN 1610. Idéal pour obturation et test d'étanchéité des réseaux gravitaires.</p>
+              <div class="price-table">
+                <table>
+                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pression</th><th>Prix 2025 HT</th></tr></thead>
+                  <tbody>
+                    <tr data-search="kb3570"><td class="ref">KB3570</td><td>Ø35–Ø70</td><td class="pres">2 bar</td><td class="price">69 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb50100"><td class="ref">KB50100</td><td>Ø50–Ø100</td><td class="pres">1,5 bar</td><td class="price">83 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb50100 2.5"><td class="ref">KB50100/2,5</td><td>Ø50–Ø100</td><td class="pres">2,5 bar</td><td class="price">83 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb70150"><td class="ref">KB70150</td><td>Ø70–Ø150</td><td class="pres">1,5 bar</td><td class="price">95 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb70150 2.5"><td class="ref">KB70150/2,5</td><td>Ø70–Ø150</td><td class="pres">2,5 bar</td><td class="price">95 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb100200"><td class="ref">KB100200</td><td>Ø100–Ø200</td><td class="pres">1,5 bar</td><td class="price">124 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb100200 2.5"><td class="ref">KB100200/2,5</td><td>Ø100–Ø200</td><td class="pres">2,5 bar</td><td class="price">124 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb150300"><td class="ref">KB150300</td><td>Ø150–Ø300</td><td class="pres">1,5 bar</td><td class="price">162 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb150300 2.5"><td class="ref">KB150300/2,5</td><td>Ø150–Ø300</td><td class="pres">2,5 bar</td><td class="price">162 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb200400"><td class="ref">KB200400</td><td>Ø200–Ø400</td><td class="pres">1,5 bar</td><td class="price">183 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb200400 2.5"><td class="ref">KB200400/2,5</td><td>Ø200–Ø400</td><td class="pres">2,5 bar</td><td class="price">197 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb200500"><td class="ref">KB200500</td><td>Ø200–Ø500</td><td class="pres">1,5 bar</td><td class="price">273 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb200500 2.5"><td class="ref">KB200500/2,5</td><td>Ø200–Ø500</td><td class="pres">2,5 bar</td><td class="price">288 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb300600"><td class="ref">KB300600</td><td>Ø300–Ø600</td><td class="pres">1,5 bar</td><td class="price">288 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb300600 2.5"><td class="ref">KB300600/2,5</td><td>Ø300–Ø600</td><td class="pres">2,5 bar</td><td class="price">337 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb5001000"><td class="ref">KB5001000</td><td>Ø500–Ø1000</td><td class="pres">1,5 bar</td><td class="price">1 140 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb5001000 2.5"><td class="ref">KB5001000/2,5</td><td>Ø500–Ø1000</td><td class="pres">2,5 bar</td><td class="price">1 282 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb6001200"><td class="ref">KB6001200</td><td>Ø600–Ø1200</td><td class="pres">1,5 bar</td><td class="price">1 524 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb6001600"><td class="ref">KB6001600</td><td>Ø600–Ø1600</td><td class="pres">1 bar</td><td class="price">4 890 € <span class="ht">HT</span></td></tr>
+                    <tr data-search="kb10002000"><td class="ref">KB10002000</td><td>Ø1000–Ø2000</td><td class="pres">1 bar</td><td class="price">9 781 € <span class="ht">HT</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-foot" style="padding:0;border:none;margin-top:.75rem">
+                <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD: Obturateur Simple Nitrile -->
+        <div class="prod-card" data-search="obturateur simple nitrile nitril kb3570n kb50100n kb70150n kb100200n kb150300 kb200400n kb200500n kb300600n kb5001000n kb6001200n kb6001600n kb10002000n hydrocarbure">
+          <div class="card-thumb">
+            <img src="https://www.plugco.net/files/2018/12/pipe-plug-plugco-3.jpg" alt="Obturateur simple nitrile" onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'70\' ry=\'45\' fill=\'none\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'70\' ry=\'45\' fill=\'rgba(14,110,118,0.08)\'/><circle cx=\'150\' cy=\'85\' r=\'18\' fill=\'none\' stroke=\'#E07B39\' stroke-width=\'2\' stroke-dasharray=\'4 3\'/><line x1=\'150\' y1=\'40\' x2=\'150\' y2=\'25\' stroke=\'#0E6E76\' stroke-width=\'2\' stroke-linecap=\'round\'/><circle cx=\'150\' cy=\'22\' r=\'3.5\' fill=\'#E07B39\'/><text x=\'150\' y=\'160\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>OBTURATEUR NITRILE</text></svg>'">
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Obturateur Simple · Nitrile</span>
+            <h3 class="card-title">Obturateur Simple Nitrile — Série KB…N</h3>
+            <p class="card-desc">Caoutchouc nitrile renforcé pour milieux hydrocarbures, pétrole et gaz. Résistant aux solvants pétrochimiques.</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">KB3570N</td><td>Ø35–Ø70</td><td class="pres">2 bar</td><td class="price">95 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB50100N/2,5</td><td>Ø50–Ø100</td><td class="pres">2,5 bar</td><td class="price">114 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB70150N/2,5</td><td>Ø70–Ø150</td><td class="pres">2,5 bar</td><td class="price">131 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB100200N</td><td>Ø100–Ø200</td><td class="pres">2,5 bar</td><td class="price">169 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB200400N</td><td>Ø200–Ø400</td><td class="pres">1,5 bar</td><td class="price">249 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB200500N</td><td>Ø200–Ø500</td><td class="pres">1,5 bar</td><td class="price">375 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB300600N</td><td>Ø300–Ø600</td><td class="pres">1,5 bar</td><td class="price">390 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB5001000N</td><td>Ø500–Ø1000</td><td class="pres">1,5 bar</td><td class="price">1 369 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB6001200N</td><td>Ø600–Ø1200</td><td class="pres">1,5 bar</td><td class="price">1 830 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB6001600N</td><td>Ø600–Ø1600</td><td class="pres">1 bar</td><td class="price">6 358 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KB10002000N</td><td>Ø1000–Ø2000</td><td class="pres">1 bar</td><td class="price">10 596 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 95 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- CARD: Obturateur Court Obus -->
+        <div class="prod-card" data-search="obturateur court obus ov5070 ov70100 ov100150 ov150200 2.5 bar">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <g stroke="#0E6E76" stroke-width="1" opacity="0.2">
+                <line x1="0" y1="56" x2="300" y2="56"/><line x1="0" y1="113" x2="300" y2="113"/>
+                <line x1="75" y1="0" x2="75" y2="169"/><line x1="150" y1="0" x2="150" y2="169"/><line x1="225" y1="0" x2="225" y2="169"/>
+              </g>
+              <ellipse cx="150" cy="85" rx="55" ry="40" fill="rgba(14,110,118,0.1)" stroke="#0E6E76" stroke-width="2.5"/>
+              <path d="M95 85 Q100 60 150 58 Q200 60 205 85 Q200 110 150 112 Q100 110 95 85 Z" fill="rgba(14,110,118,0.15)" stroke="#0E6E76" stroke-width="2" fill-rule="evenodd"/>
+              <ellipse cx="150" cy="85" rx="18" ry="14" fill="#E07B39" opacity=".8"/>
+              <line x1="150" y1="71" x2="150" y2="45" stroke="#0E6E76" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="150" cy="41" r="4" fill="#E07B39"/>
+              <text x="150" y="158" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">OBTURATEUR COURT OBUS</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Obturateur Court · Obus</span>
+            <h3 class="card-title">Obturateur Court Obus — Série OV</h3>
+            <p class="card-desc">Profil court obus pour interventions en espace confiné, 2,5 bar, SBR+NR renforcé.</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Ø min–max</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">OV5070</td><td>Ø50–Ø70</td><td class="price">124 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">OV70100</td><td>Ø70–Ø100</td><td class="price">133 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">OV100150</td><td>Ø100–Ø150</td><td class="price">143 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">OV150200</td><td>Ø150–Ø200</td><td class="price">162 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 124 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div><!-- /prod-grid simples -->
+    </div><!-- /grp-simple -->
+
+
+    <!-- ─── 2. OBTURATEURS TRAVERSANTS ────────────────────── -->
+    <div class="section-group" data-cat="traversant" id="grp-traversant">
+      <div class="section-title">
+        <h2>Obturateurs Traversants</h2>
+        <span class="badge">PlugCo · Turquie</span>
+        <span class="count">KTB série · Bypass intégré</span>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-card wide-card" data-search="obturateur traversant ktb ktb3570 ktb50100 ktb70150 ktb100200 ktb150300 ktb200400 ktb200500 ktb300600 ktb5001000 ktb6001200 ktb6001600 ktb10002000 bypass derivation">
+          <div class="card-inner">
+            <div class="card-img-col">
+              <img src="https://www.plugco.net/files/2018/12/pipe-plug-plugco-1.jpg"
+                   alt="Obturateur traversant PlugCo bypass"
+                   onerror="this.style.display='none'">
+            </div>
+            <div class="card-content">
+              <span class="card-cat">Obturateur Traversant avec Bypass</span>
+              <h3 class="card-title">Obturateur Traversant — Série KTB</h3>
+              <p class="card-desc">Identique à l'obturateur simple avec raccord by-pass intégré pour dérivation du flux ou remplissage sans accès regard. Versions inox (I) disponibles.</p>
+              <div class="price-table">
+                <table>
+                  <thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Prix 2025 HT</th></tr></thead>
+                  <tbody>
+                    <tr><td class="ref">KTB3570</td><td>Ø35–Ø70</td><td class="pres">2 bar</td><td class="price">207 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB50100</td><td>Ø50–Ø100</td><td class="pres">1,5 bar</td><td class="price">244 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB50100/2,5</td><td>Ø50–Ø100</td><td class="pres">2,5 bar</td><td class="price">244 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB70150</td><td>Ø70–Ø150</td><td class="pres">1,5 bar</td><td class="price">255 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB100200</td><td>Ø100–Ø200</td><td class="pres">1,5 bar</td><td class="price">321 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB100200I</td><td>Ø100–Ø200</td><td class="pres">1,5 bar</td><td class="price">371 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB150300</td><td>Ø150–Ø300</td><td class="pres">1,5 bar</td><td class="price">371 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB150300I</td><td>Ø150–Ø300</td><td class="pres">1,5 bar</td><td class="price">436 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB200400</td><td>Ø200–Ø400</td><td class="pres">1,5 bar</td><td class="price">458 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB200500</td><td>Ø200–Ø500</td><td class="pres">1,5 bar</td><td class="price">486 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB200500/2,5</td><td>Ø200–Ø500</td><td class="pres">2,5 bar</td><td class="price">601 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB300600</td><td>Ø300–Ø600</td><td class="pres">1,5 bar</td><td class="price">601 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB300600I</td><td>Ø300–Ø600</td><td class="pres">1,5 bar</td><td class="price">1 026 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB5001000</td><td>Ø500–Ø1000</td><td class="pres">1,5 bar</td><td class="price">1 346 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB5001000I</td><td>Ø500–Ø1000</td><td class="pres">1,5 bar</td><td class="price">1 496 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB6001200</td><td>Ø600–Ø1200</td><td class="pres">1,5 bar</td><td class="price">1 481 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB6001200I</td><td>Ø600–Ø1200</td><td class="pres">1,5 bar</td><td class="price">1 925 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB6001600</td><td>Ø600–Ø1600</td><td class="pres">1 bar</td><td class="price">3 432 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB10002000</td><td>Ø1000–Ø2000</td><td class="pres">1 bar</td><td class="price">6 864 € <span class="ht">HT</span></td></tr>
+                    <tr><td class="ref">KTB10002000I</td><td>Ø1000–Ø2000</td><td class="pres">1 bar</td><td class="price">7 207 € <span class="ht">HT</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="margin-top:.75rem">
+                <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /grp-traversant -->
+
+
+    <!-- ─── 3. OBTURATEURS COURTS ─────────────────────────── -->
+    <div class="section-group" data-cat="court" id="grp-court">
+      <div class="section-title">
+        <h2>Obturateurs Courts</h2>
+        <span class="badge">PlugCo · Turquie</span>
+        <span class="count">CKB · KBM · KTBM · 2,5 bar</span>
+      </div>
+      <div class="prod-grid">
+
+        <!-- Court Simple -->
+        <div class="prod-card" data-search="obturateur court simple ckb ckb30 ckb40 ckb50 ckb60 ckb75 ckb100 ckb150 ckb200 ckb250 ckb300 kbm70150 ckb100150 kbm100200 ckb150200 kbm150300 ckb200250 kbm200400 ckb250300 ckb300350">
+          <div class="card-thumb">
+            <img src="https://www.plugco.net/files/2018/12/pipe-plug-plugco-5.jpg" alt="Obturateur court simple"
+                 onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><ellipse cx=\'150\' cy=\'85\' rx=\'40\' ry=\'42\' fill=\'rgba(14,110,118,0.15)\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><line x1=\'150\' y1=\'43\' x2=\'150\' y2=\'28\' stroke=\'#0E6E76\' stroke-width=\'2\'/><circle cx=\'150\' cy=\'24\' r=\'4\' fill=\'#E07B39\'/><text x=\'150\' y=\'158\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>COURT SIMPLE</text></svg>'">
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Court Simple · 2,5 bar</span>
+            <h3 class="card-title">Obturateur Court Simple — CKB / KBM</h3>
+            <p class="card-desc">Profil court pour raccords et tronçons courts. Diamètres fixes (CKB) et multi-tailles (KBM).</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Ø</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">CKB30</td><td>Ø30</td><td class="price">21 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB40</td><td>Ø40</td><td class="price">21 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB50</td><td>Ø50</td><td class="price">23 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB60</td><td>Ø60</td><td class="price">25 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB75</td><td>Ø75</td><td class="price">27 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB100</td><td>Ø100</td><td class="price">32 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB150</td><td>Ø150</td><td class="price">57 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB200</td><td>Ø200</td><td class="price">89 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB250</td><td>Ø250</td><td class="price">131 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB300</td><td>Ø300</td><td class="price">192 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KBM70150</td><td>Ø70–Ø150</td><td class="price">152 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB100150</td><td>Ø100–Ø150</td><td class="price">116 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KBM100200</td><td>Ø100–Ø200</td><td class="price">200 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB150200</td><td>Ø150–Ø200</td><td class="price">137 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KBM150300</td><td>Ø150–Ø300</td><td class="price">238 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KBM200400</td><td>Ø200–Ø400</td><td class="price">238 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">CKB300350</td><td>Ø300–Ø350</td><td class="price">274 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 21 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Court Traversant -->
+        <div class="prod-card" data-search="obturateur court traversant ktbm ktbm50100 cktb ktbm100200 sktb125200 ktbm150300 bypass court 2.5 bar">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <g stroke="#0E6E76" stroke-width="1" opacity="0.18"><line x1="0" y1="56" x2="300" y2="56"/><line x1="0" y1="113" x2="300" y2="113"/><line x1="100" y1="0" x2="100" y2="169"/><line x1="200" y1="0" x2="200" y2="169"/></g>
+              <ellipse cx="150" cy="85" rx="40" ry="42" fill="rgba(14,110,118,0.15)" stroke="#0E6E76" stroke-width="2.5"/>
+              <line x1="150" y1="43" x2="150" y2="28" stroke="#0E6E76" stroke-width="2"/>
+              <circle cx="150" cy="24" r="4" fill="#E07B39"/>
+              <line x1="190" y1="78" x2="230" y2="78" stroke="#E07B39" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="234" cy="78" r="4" fill="#E07B39"/>
+              <text x="150" y="158" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">COURT TRAVERSANT</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Court Traversant · Bypass · 2,5 bar</span>
+            <h3 class="card-title">Obturateur Court Traversant — KTBM</h3>
+            <p class="card-desc">Version courte avec bypass, pour interventions rapides sans accès regard. Inclut la référence à passage by-pass SKTB125200.</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Ø</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">KTBM50100/2,5</td><td>Ø50–Ø100</td><td class="price">209 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KTBM100200</td><td>Ø100–Ø200</td><td class="price">418 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKTB125200</td><td>Ø125–Ø200 by-pass</td><td class="price">444 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">KTBM150300</td><td>Ø150–Ø300</td><td class="price">570 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 209 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /grp-court -->
+
+
+    <!-- ─── 4. OBTURATEURS SPÉCIAUX & HAUTE PRESSION ─────── -->
+    <div class="section-group" data-cat="special" id="grp-special">
+      <div class="section-title">
+        <h2>Obturateurs Spéciaux &amp; Haute Pression</h2>
+        <span class="badge">PlugCo · Turquie</span>
+        <span class="count">HP · Test eau · Mécanique · Gros passage</span>
+      </div>
+      <div class="prod-grid">
+
+        <!-- Haute Pression -->
+        <div class="prod-card" data-search="obturateur haute pression ybkb ybkb100150 ybkb150200 ybkb200300 ybkb300400 ybkb500600 6 bar metal">
+          <div class="card-thumb">
+            <img src="https://www.plugco.net/files/2021/03/plugco-brand.jpg" alt="Obturateur haute pression PlugCo 6 bar"
+                 onerror="this.parentElement.innerHTML='<svg class=\'thumb-svg\' viewBox=\'0 0 300 169\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'300\' height=\'169\' fill=\'#CFE7E5\'/><rect x=\'110\' y=\'52\' width=\'80\' height=\'65\' rx=\'8\' fill=\'rgba(14,110,118,0.2)\' stroke=\'#0E6E76\' stroke-width=\'2.5\'/><rect x=\'95\' y=\'68\' width=\'110\' height=\'33\' rx=\'16\' fill=\'none\' stroke=\'#E07B39\' stroke-width=\'2\'/><text x=\'150\' y=\'140\' text-anchor=\'middle\' font-size=\'9\' fill=\'#52615E\' font-family=\'Inter\'>HP — 6 BAR</text></svg>'">
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Haute Pression · 6 bar · Corps métal</span>
+            <h3 class="card-title">Obturateur Haute Pression — Série YBKB</h3>
+            <p class="card-desc">Corps métallique lié à caoutchouc extra-renforcé. Pour réseaux sous pression, tests 6 bar.</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Ø min–max</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">YBKB100150</td><td>Ø100–Ø150</td><td class="price">192 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">YBKB150200</td><td>Ø150–Ø200</td><td class="price">240 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">YBKB200300</td><td>Ø200–Ø300</td><td class="price">359 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">YBKB300400</td><td>Ø300–Ø500</td><td class="price">620 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">YBKB500600</td><td>Ø500–Ø600</td><td class="price">1 203 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 192 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Test à l'eau -->
+        <div class="prod-card" data-search="obturateur test eau sktb sktb200500 sktb300600 sktb500800 sktb5001200 water watertight hydraulique">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <ellipse cx="150" cy="85" rx="75" ry="48" fill="rgba(14,110,118,0.1)" stroke="#0E6E76" stroke-width="2.5"/>
+              <path d="M75 85 Q 90 55 150 52 Q 210 55 225 85" fill="none" stroke="#0E6E76" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <path d="M75 85 Q 90 115 150 118 Q 210 115 225 85" fill="rgba(14,110,118,0.2)" stroke="#0E6E76" stroke-width="1.5"/>
+              <line x1="120" y1="70" x2="120" y2="100" stroke="#E07B39" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="150" y1="65" x2="150" y2="105" stroke="#E07B39" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="180" y1="70" x2="180" y2="100" stroke="#E07B39" stroke-width="2.5" stroke-linecap="round"/>
+              <text x="150" y="157" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">TEST À L'EAU · 1,5 BAR</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Test à l'Eau · 1,5 bar</span>
+            <h3 class="card-title">Obturateur Test à l'Eau — Série SKTB</h3>
+            <p class="card-desc">Conçu pour les tests d'étanchéité hydrauliques sur grandes sections de canalisation. Remplissage via bypass sans accès regard.</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Ø min–max</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">SKTB200500</td><td>Ø200–Ø500</td><td class="price">739 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKTB300600</td><td>Ø300–Ø600</td><td class="price">1 068 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKTB500800</td><td>Ø500–Ø800</td><td class="price">1 496 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKTB5001200</td><td>Ø500–Ø1200</td><td class="price">1 725 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 739 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Mécanique Simple -->
+        <div class="prod-card" data-search="obturateur mecanique simple mkb mkb12 mkb30 mkb38 mkb50 mkb75 mkb100 mkb150 filete pouce">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <circle cx="150" cy="85" r="45" fill="rgba(14,110,118,0.12)" stroke="#0E6E76" stroke-width="2.5"/>
+              <circle cx="150" cy="85" r="22" fill="none" stroke="#0E6E76" stroke-width="1.5" stroke-dasharray="3 4"/>
+              <rect x="140" y="55" width="20" height="60" rx="4" fill="rgba(14,110,118,0.2)" stroke="#0E6E76" stroke-width="1.5"/>
+              <line x1="125" y1="85" x2="175" y2="85" stroke="#E07B39" stroke-width="2"/>
+              <text x="150" y="158" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">MÉCANIQUE · SANS PRESSION</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Mécanique Simple · Sans pression</span>
+            <h3 class="card-title">Obturateur Mécanique Simple — Série MKB</h3>
+            <p class="card-desc">Serrage mécanique par vis. Pour obturations rapides sans source d'air. Du 1/2" au 6".</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Taille</th><th>Ø intérieur</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">MKB12</td><td>1/2"</td><td>12–13 mm</td><td class="price">26 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKB30</td><td>1"1/4</td><td>29–32 mm</td><td class="price">34 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKB38</td><td>1"1/2</td><td>38–40 mm</td><td class="price">40 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKB50</td><td>2"</td><td>49–51 mm</td><td class="price">48 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKB75</td><td>3"</td><td>74–77 mm</td><td class="price">53 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKB100</td><td>4"</td><td>98–102 mm</td><td class="price">61 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKB150</td><td>6"</td><td>148–153 mm</td><td class="price">121 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 26 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Mécanique Traversant -->
+        <div class="prod-card" data-search="obturateur mecanique traversant mktb mktb12 mktb30 mktb38 mktb50 mktb75 mktb100 mktb150 bypass mecanique pouce">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <circle cx="150" cy="85" r="45" fill="rgba(14,110,118,0.12)" stroke="#0E6E76" stroke-width="2.5"/>
+              <rect x="140" y="55" width="20" height="60" rx="4" fill="rgba(14,110,118,0.2)" stroke="#0E6E76" stroke-width="1.5"/>
+              <line x1="125" y1="85" x2="175" y2="85" stroke="#E07B39" stroke-width="2"/>
+              <line x1="195" y1="78" x2="230" y2="78" stroke="#E07B39" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="234" cy="78" r="4" fill="#E07B39"/>
+              <text x="150" y="158" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">MÉCANIQUE TRAVERSANT</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Mécanique Traversant · Bypass</span>
+            <h3 class="card-title">Obturateur Mécanique Traversant — MKTB</h3>
+            <p class="card-desc">Version traversante du mécanique, avec raccord by-pass pour dérivation. Du 1/2" au 6".</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Taille</th><th>Ø</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">MKTB12</td><td>1/2"</td><td>12–13</td><td class="price">61 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKTB30</td><td>1"1/4</td><td>29–32</td><td class="price">66 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKTB38</td><td>1"1/2</td><td>38–40</td><td class="price">74 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKTB50</td><td>2"</td><td>49–51</td><td class="price">79 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKTB75</td><td>3"</td><td>74–77</td><td class="price">87 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKTB100</td><td>4"</td><td>98–102</td><td class="price">92 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">MKTB150</td><td>6"</td><td>148–153</td><td class="price">153 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 61 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Gros Passage Traversant -->
+        <div class="prod-card" data-search="obturateur gros passage traversant lktb lktb100200 lktb200500 lktb300600 lktb500800 lktb5001200">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <ellipse cx="150" cy="85" rx="80" ry="52" fill="rgba(14,110,118,0.1)" stroke="#0E6E76" stroke-width="2.5"/>
+              <ellipse cx="150" cy="85" rx="30" ry="30" fill="rgba(224,123,57,0.2)" stroke="#E07B39" stroke-width="2"/>
+              <line x1="230" y1="80" x2="260" y2="80" stroke="#E07B39" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="264" cy="80" r="5" fill="#E07B39"/>
+              <text x="150" y="157" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">GROS PASSAGE TRAVERSANT · 1,5 BAR</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Gros Passage Traversant · 1,5 bar</span>
+            <h3 class="card-title">Obturateur Gros Passage Traversant — LKTB</h3>
+            <p class="card-desc">Grand passage intérieur pour maintien du débit lors des interventions. Pour réseaux à forte circulation.</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Ø min–max</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">LKTB100200</td><td>Ø100–Ø200</td><td class="price">404 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">LKTB200500</td><td>Ø200–Ø500</td><td class="price">737 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">LKTB300600</td><td>Ø300–Ø600</td><td class="price">1 067 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">LKTB500800</td><td>Ø500–Ø800</td><td class="price">1 492 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">LKTB5001200</td><td>Ø500–Ø1200</td><td class="price">1 721 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 404 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /grp-special -->
+
+
+    <!-- ─── 5. OBTURATEURS DE REGARD & OVOÏDES ─────────── -->
+    <div class="section-group" data-cat="regard" id="grp-regard">
+      <div class="section-title">
+        <h2>Obturateurs de Regard &amp; Ovoïdes</h2>
+        <span class="badge">PlugCo · Turquie</span>
+        <span class="count">SKB · RTB · EKB · EKTB</span>
+      </div>
+      <div class="prod-grid">
+        <!-- Regard Bagel Simple -->
+        <div class="prod-card" data-search="obturateur regard bagel simple skb skb300400 skb400500 skb500600 skb600700 skb700800 skb800900 skb9001050 chambre manholes">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <circle cx="150" cy="85" r="60" fill="rgba(14,110,118,0.1)" stroke="#0E6E76" stroke-width="2.5"/>
+              <circle cx="150" cy="85" r="32" fill="rgba(14,110,118,0.25)" stroke="#0E6E76" stroke-width="2"/>
+              <circle cx="150" cy="85" r="14" fill="#fff" stroke="#E07B39" stroke-width="1.5"/>
+              <line x1="150" y1="25" x2="150" y2="10" stroke="#0E6E76" stroke-width="2"/>
+              <circle cx="150" cy="6" r="4" fill="#E07B39"/>
+              <text x="150" y="158" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">REGARD BAGEL SIMPLE</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Regard Bagel Simple · 1,5 bar</span>
+            <h3 class="card-title">Obturateur de Regard Simple — Série SKB</h3>
+            <p class="card-desc">Forme torique pour regards de visite. Caoutchouc renforcé sur armature métallique intérieure. Ø300 à Ø1050.</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Ø min–max</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">SKB300400</td><td>Ø300–Ø400</td><td class="price">525 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKB400500</td><td>Ø400–Ø500</td><td class="price">638 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKB500600</td><td>Ø500–Ø600</td><td class="price">780 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKB600700</td><td>Ø600–Ø700</td><td class="price">950 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKB700800</td><td>Ø700–Ø800</td><td class="price">1&nbsp;148 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKB800900</td><td>Ø800–Ø900</td><td class="price">1&nbsp;375 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">SKB9001050</td><td>Ø900–Ø1050</td><td class="price">1&nbsp;629 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 525 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Regard Bagel Traversant -->
+        <div class="prod-card" data-search="obturateur regard bagel traversant rtb rtb6006501 rtb6006502 rtb6006503 rtb8008501 rtb8008502 rtb8008503">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <circle cx="140" cy="85" r="58" fill="rgba(14,110,118,0.1)" stroke="#0E6E76" stroke-width="2.5"/>
+              <circle cx="140" cy="85" r="30" fill="rgba(14,110,118,0.25)" stroke="#0E6E76" stroke-width="2"/>
+              <circle cx="140" cy="85" r="12" fill="#fff" stroke="#E07B39" stroke-width="1.5"/>
+              <line x1="198" y1="80" x2="230" y2="80" stroke="#E07B39" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="234" cy="80" r="4" fill="#E07B39"/>
+              <text x="150" y="158" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">REGARD BAGEL TRAVERSANT</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Regard Bagel Traversant · 1,5 bar</span>
+            <h3 class="card-title">Obturateur de Regard Traversant — Série RTB</h3>
+            <p class="card-desc">Version traversante des regards de visite avec raccord bypass. Connexions 1/4", 1" ou 2".</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Bypass</th><th>Ø</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">RTB6006501</td><td>2×1/4"</td><td>Ø600–650</td><td class="price">1&nbsp;007 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">RTB6006502</td><td>1"</td><td>Ø600–650</td><td class="price">1&nbsp;040 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">RTB6006503</td><td>2"</td><td>Ø600–650</td><td class="price">1&nbsp;084 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">RTB8008501</td><td>2×1/4"</td><td>Ø800–850</td><td class="price">1&nbsp;302 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">RTB8008502</td><td>1"</td><td>Ø800–850</td><td class="price">1&nbsp;336 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">RTB8008503</td><td>2"</td><td>Ø800–850</td><td class="price">1&nbsp;380 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 1 007 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Ovoïde Simple + Traversant -->
+        <div class="prod-card" data-search="obturateur ovoide ovoïde ekb ektb ekb200300 ekb400600 ekb600900 ektb ovoid egg forme ovale">
+          <div class="card-thumb">
+            <svg class="thumb-svg" viewBox="0 0 300 169" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="300" height="169" fill="#CFE7E5"/>
+              <ellipse cx="150" cy="90" rx="55" ry="68" fill="rgba(14,110,118,0.12)" stroke="#0E6E76" stroke-width="2.5" transform="rotate(-10 150 90)"/>
+              <ellipse cx="150" cy="90" rx="55" ry="68" fill="none" stroke="#0E6E76" stroke-width="1" stroke-dasharray="3 4" transform="rotate(-10 150 90)" opacity=".4"/>
+              <line x1="150" y1="22" x2="150" y2="10" stroke="#0E6E76" stroke-width="2"/>
+              <circle cx="150" cy="7" r="4" fill="#E07B39"/>
+              <text x="150" y="158" text-anchor="middle" font-size="9" fill="#52615E" font-family="Inter,sans-serif">PROFIL OVOÏDE · 1,5 BAR</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Profil Ovoïde · 1,5 bar</span>
+            <h3 class="card-title">Obturateurs Ovoïdes — EKB / EKTB</h3>
+            <p class="card-desc">Pour canalisations ovoïdes et dalots. Profil adapté aux sections non circulaires.</p>
+            <div class="price-table">
+              <table>
+                <thead><tr><th>Référence</th><th>Section</th><th>Type</th><th>Prix HT</th></tr></thead>
+                <tbody>
+                  <tr><td class="ref">EKB200300</td><td>200/300–300/450</td><td>Simple</td><td class="price">1&nbsp;512 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">EKB400600</td><td>300/450–400/600</td><td>Simple</td><td class="price">2&nbsp;821 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">EKB600900</td><td>400/600–600/900</td><td>Simple</td><td class="price">2&nbsp;960 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">EKTB200300</td><td>200/300–300/450</td><td>Traversant</td><td class="price">1&nbsp;660 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">EKTB400600</td><td>300/450–400/600</td><td>Traversant</td><td class="price">3&nbsp;349 € <span class="ht">HT</span></td></tr>
+                  <tr><td class="ref">EKTB600900</td><td>400/600–600/900</td><td>Traversant</td><td class="price">3&nbsp;490 € <span class="ht">HT</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-foot">
+            <span class="card-price">à partir de 1 512 € <small>HT</small></span>
+            <a href="dardeau-site.html#contact" class="btn-buy">Commander <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div><!-- /grp-regard -->
+
+
+    <!-- ─── 6. PACKERS ────────────────────────────────────── -->
+    <div class="section-group" data-cat="packer" id="grp-packer">
+      <div class="section-title">
+        <h2>Packers de Réhabilitation</h2>
+        <span class="badge">PlugCo · Turquie</span>
+        <span class="count">BTB · TB · DP · Sans tranchée</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:260px 1fr;gap:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:1.25rem">
+        <div style="background:var(--teal-l);display:flex;align-items:center;justify-content:center;padding:1.5rem;min-height:160px">
+          <img src="https://www.plugco.net/files/2018/12/pipe-plug-7.jpg" alt="Packer flexible PlugCo réhabilitation" style="max-height:140px;object-fit:contain" onerror="this.remove()">
+        </div>
+        <div style="padding:1.25rem 1.5rem">
+          <span class="card-cat">Packer · Réhabilitation ponctuelle sans tranchée</span>
+          <h3 class="card-title" style="font-size:1.05rem;margin:.4rem 0">Packers Flexibles, Longs &amp; Coude</h3>
+          <p style="font-size:.8rem;color:var(--ink-s);margin-bottom:.75rem">Caoutchouc renforcé double-couche pour dépose de patches chimiques (CIPP ponctuel).<br>
+            <strong>BTB</strong> — Flexible avec roulettes (Ø100–Ø800, L=1000–5000mm)<br>
+            <strong>TB</strong> — Long sans roulettes (Ø25–Ø600, L=600–5000mm)<br>
+            <strong>DP</strong> — Coude 45°/90° (Ø50–Ø170, L=1200mm)
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+            <span style="font-size:.7rem;font-weight:700;background:var(--teal-l);color:var(--teal-d);padding:.22rem .65rem;border-radius:999px">Ø25–800 mm</span>
+            <span style="font-size:.7rem;font-weight:700;background:var(--teal-l);color:var(--teal-d);padding:.22rem .65rem;border-radius:999px">0,8–3 bar</span>
+            <span style="font-size:.7rem;font-weight:700;background:var(--teal-l);color:var(--teal-d);padding:.22rem .65rem;border-radius:999px">L ≤ 5 m</span>
+            <span style="font-size:.7rem;font-weight:700;background:var(--teal-l);color:var(--teal-d);padding:.22rem .65rem;border-radius:999px">Sans tranchée</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="packer-table-wrap" data-search="packer flexible long coude btb tb dp rehabilitation sans tranchee cipp">
+        <div class="packer-tabs" role="tablist" id="packerTabs">
+          <button class="packer-tab active" role="tab" data-tab="btb">Packer Flexible BTB</button>
+          <button class="packer-tab" role="tab" data-tab="tb25">TB · Ø25–70</button>
+          <button class="packer-tab" role="tab" data-tab="tb100">TB · Ø70–300</button>
+          <button class="packer-tab" role="tab" data-tab="tb300">TB · Ø300–600</button>
+          <button class="packer-tab" role="tab" data-tab="dp">Packer Coude DP</button>
+        </div>
+
+        <div class="packer-tab-content active" id="tab-btb">
+          <div class="packer-table-inner">
+            <table><thead><tr><th>Référence</th><th>Ø min–max</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+              <tr><td class="ref">BTB10015010</td><td>Ø100–150</td><td>2,5 bar</td><td>1000 mm</td><td class="price">458 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB10015015</td><td>Ø100–150</td><td>2,5 bar</td><td>1500 mm</td><td class="price">549 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB10015020</td><td>Ø100–150</td><td>2,5 bar</td><td>2000 mm</td><td class="price">695 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB10015030</td><td>Ø100–150</td><td>2,5 bar</td><td>3000 mm</td><td class="price">935 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB10015050</td><td>Ø100–150</td><td>2,5 bar</td><td>5000 mm</td><td class="price">1&nbsp;406 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">BTB15025010</td><td>Ø150–250</td><td>2 bar</td><td>1000 mm</td><td class="price">699 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB15025020</td><td>Ø150–250</td><td>2 bar</td><td>2000 mm</td><td class="price">992 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB15025030</td><td>Ø150–250</td><td>2 bar</td><td>3000 mm</td><td class="price">1&nbsp;282 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB15025050</td><td>Ø150–250</td><td>2 bar</td><td>5000 mm</td><td class="price">1&nbsp;861 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">BTB20030010</td><td>Ø200–300</td><td>2 bar</td><td>1000 mm</td><td class="price">675 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB20030020</td><td>Ø200–300</td><td>2 bar</td><td>2000 mm</td><td class="price">1&nbsp;042 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB20030050</td><td>Ø200–300</td><td>2 bar</td><td>5000 mm</td><td class="price">2&nbsp;140 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">BTB30040015</td><td>Ø300–400</td><td>1,5 bar</td><td>1500 mm</td><td class="price">795 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB30040020</td><td>Ø300–400</td><td>1,5 bar</td><td>2000 mm</td><td class="price">1&nbsp;282 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB30040050</td><td>Ø300–400</td><td>1,5 bar</td><td>5000 mm</td><td class="price">2&nbsp;650 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">BTB40060015</td><td>Ø400–600</td><td>1 bar</td><td>1500 mm</td><td class="price">1&nbsp;371 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB40060030</td><td>Ø400–600</td><td>1 bar</td><td>3000 mm</td><td class="price">2&nbsp;559 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB40060050</td><td>Ø400–600</td><td>1 bar</td><td>5000 mm</td><td class="price">3&nbsp;931 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">BTB60080015</td><td>Ø600–800</td><td>0,8 bar</td><td>1500 mm</td><td class="price">2&nbsp;195 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB60080030</td><td>Ø600–800</td><td>0,8 bar</td><td>3000 mm</td><td class="price">3&nbsp;659 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">BTB60080050</td><td>Ø600–800</td><td>0,8 bar</td><td>5000 mm</td><td class="price">5&nbsp;110 € <span class="ht">HT</span></td></tr>
+            </tbody></table>
+          </div>
+        </div>
+
+        <div class="packer-tab-content" id="tab-tb25">
+          <div class="packer-table-inner">
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+              <tr><td class="ref">TB255006</td><td>Ø25–50</td><td>3 bar</td><td>600</td><td class="price">161 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB255010</td><td>Ø25–50</td><td>3 bar</td><td>1000</td><td class="price">166 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB255015</td><td>Ø25–50</td><td>3 bar</td><td>1500</td><td class="price">211 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB255020</td><td>Ø25–50</td><td>3 bar</td><td>2000</td><td class="price">246 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB255030</td><td>Ø25–50</td><td>3 bar</td><td>3000</td><td class="price">314 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB255050</td><td>Ø25–50</td><td>3 bar</td><td>5000</td><td class="price">386 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">TB507006</td><td>Ø50–70</td><td>3 bar</td><td>600</td><td class="price">161 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB507010</td><td>Ø50–70</td><td>3 bar</td><td>1000</td><td class="price">166 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB507020</td><td>Ø50–70</td><td>3 bar</td><td>2000</td><td class="price">246 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB507050</td><td>Ø50–70</td><td>3 bar</td><td>5000</td><td class="price">385 € <span class="ht">HT</span></td></tr>
+            </tbody></table>
+          </div>
+        </div>
+
+        <div class="packer-tab-content" id="tab-tb100">
+          <div class="packer-table-inner">
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+              <tr><td class="ref">TB7010006</td><td>Ø70–100</td><td>3 bar</td><td>600</td><td class="price">139 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB7010010</td><td>Ø70–100</td><td>3 bar</td><td>1000</td><td class="price">174 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB7010020</td><td>Ø70–100</td><td>3 bar</td><td>2000</td><td class="price">264 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB7010050</td><td>Ø70–100</td><td>3 bar</td><td>5000</td><td class="price">525 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">TB10015006</td><td>Ø100–150</td><td>2,5 bar</td><td>600</td><td class="price">185 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB10015010</td><td>Ø100–150</td><td>2,5 bar</td><td>1000</td><td class="price">220 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB10015020</td><td>Ø100–150</td><td>2,5 bar</td><td>2000</td><td class="price">321 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB10015050</td><td>Ø100–150</td><td>2,5 bar</td><td>5000</td><td class="price">610 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">TB15020006</td><td>Ø150–200</td><td>2,5 bar</td><td>600</td><td class="price">203 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB15020010</td><td>Ø150–200</td><td>2,5 bar</td><td>1000</td><td class="price">244 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB15020030</td><td>Ø150–200</td><td>2,5 bar</td><td>3000</td><td class="price">506 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">TB20030010</td><td>Ø200–300</td><td>2 bar</td><td>1000</td><td class="price">312 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB20030020</td><td>Ø200–300</td><td>2 bar</td><td>2000</td><td class="price">475 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB20030050</td><td>Ø200–300</td><td>2 bar</td><td>5000</td><td class="price">963 € <span class="ht">HT</span></td></tr>
+            </tbody></table>
+          </div>
+        </div>
+
+        <div class="packer-tab-content" id="tab-tb300">
+          <div class="packer-table-inner">
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+              <tr><td class="ref">TB30040015</td><td>Ø300–400</td><td>1,5 bar</td><td>1500</td><td class="price">695 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB30040020</td><td>Ø300–400</td><td>1,5 bar</td><td>2000</td><td class="price">735 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB30040030</td><td>Ø300–400</td><td>1,5 bar</td><td>3000</td><td class="price">841 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB30040050</td><td>Ø300–400</td><td>1,5 bar</td><td>5000</td><td class="price">1&nbsp;048 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">TB40050015</td><td>Ø400–500</td><td>1 bar</td><td>1500</td><td class="price">630 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB40050030</td><td>Ø400–500</td><td>1 bar</td><td>3000</td><td class="price">1&nbsp;009 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB40050050</td><td>Ø400–500</td><td>1 bar</td><td>5000</td><td class="price">1&nbsp;508 € <span class="ht">HT</span></td></tr>
+              <tr style="border-top:2px solid var(--teal-t)"><td class="ref">TB50060015</td><td>Ø500–600</td><td>1 bar</td><td>1500</td><td class="price">784 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB50060030</td><td>Ø500–600</td><td>1 bar</td><td>3000</td><td class="price">1&nbsp;109 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">TB50060050</td><td>Ø500–600</td><td>1 bar</td><td>5000</td><td class="price">1&nbsp;585 € <span class="ht">HT</span></td></tr>
+            </tbody></table>
+          </div>
+        </div>
+
+        <div class="packer-tab-content" id="tab-dp">
+          <div class="packer-table-inner">
+            <table><thead><tr><th>Référence</th><th>Ø</th><th>Pres.</th><th>Longueur</th><th>Prix 2025 HT</th></tr></thead><tbody>
+              <tr><td class="ref">DP5070</td><td>Ø50–70</td><td>2 bar</td><td>1200 mm</td><td class="price">303 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">DP7080</td><td>Ø70–80</td><td>2 bar</td><td>1200 mm</td><td class="price">358 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">DP100130</td><td>Ø100–130</td><td>2 bar</td><td>1200 mm</td><td class="price">408 € <span class="ht">HT</span></td></tr>
+              <tr><td class="ref">DP150170</td><td>Ø150–170</td><td>2 bar</td><td>1200 mm</td><td class="price">532 € <span class="ht">HT</span></td></tr>
+            </tbody></table>
+          </div>
+          <p style="padding:.5rem .75rem;font-size:.72rem;color:var(--ink-f)">Packers Coude pour coudes 45° et 90°. Longueur corps 1200 mm standard.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:.75rem;text-align:right">
+        <a href="dardeau-site.html#contact" class="btn-buy">Commander un packer <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div><!-- /grp-packer -->
+
+  </div><!-- /container -->
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>DARDEAU</strong>
+        <p>Vente &amp; location de matériel professionnel d'inspection et d'assainissement. Exclusivement B2B.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Catalogue</h4>
+        <ul>
+          <li><a href="#grp-simple">Obturateurs Simples</a></li>
+          <li><a href="#grp-traversant">Obturateurs Traversants</a></li>
+          <li><a href="#grp-court">Obturateurs Courts</a></li>
+          <li><a href="#grp-special">Spéciaux &amp; Haute Pression</a></li>
+          <li><a href="#grp-regard">Regard &amp; Ovoïdes</a></li>
+          <li><a href="#grp-packer">Packers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Commande</h4>
+        <ul>
+          <li><a href="dardeau-site.html#contact">Envoyer une demande</a></li>
+          <li><a href="tel:+33559481230">05 59 48 12 30</a></li>
+          <li><a href="mailto:contact@dardeau-pro.fr">contact@dardeau-pro.fr</a></li>
+          <li><a href="dardeau-site.html">Retour au site</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 DARDEAU — Catalogue professionnel revendeur.</span>
+      <span>Prix HT · Révision tarifaire 2025 · Susceptible d'évolution</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var hdr=document.getElementById("siteHeader");
+window.addEventListener("scroll",function(){
+  hdr.classList.toggle("scrolled",window.scrollY>8);
+},{passive:true});
+
+document.getElementById("packerTabs").addEventListener("click",function(e){
+  var btn=e.target.closest(".packer-tab");
+  if(!btn)return;
+  var tab=btn.getAttribute("data-tab");
+  document.querySelectorAll(".packer-tab").forEach(function(b){b.classList.remove("active")});
+  document.querySelectorAll(".packer-tab-content").forEach(function(c){c.classList.remove("active")});
+  btn.classList.add("active");
+  var content=document.getElementById("tab-"+tab);
+  if(content)content.classList.add("active");
+});
+
+var chips=document.querySelectorAll(".chip");
+var searchInput=document.getElementById("searchInput");
+var groups=document.querySelectorAll(".section-group");
+var noResults=document.getElementById("noResults");
+var countEl=document.getElementById("resultsCount");
+var activeCat="all";
+var searchTerm="";
+
+function applyFilters(){
+  var q=searchTerm.toLowerCase().trim();
+  var total=0;
+  groups.forEach(function(grp){
+    var cat=grp.getAttribute("data-cat");
+    var catMatch=(activeCat==="all"||activeCat===cat);
+    if(!catMatch){grp.setAttribute("data-hidden","true");return;}
+    grp.removeAttribute("data-hidden");
+    var cards=grp.querySelectorAll(".prod-card");
+    var grpVis=0;
+    cards.forEach(function(card){
+      var text=(card.getAttribute("data-search")||"").toLowerCase()+" "+(card.innerText||"").toLowerCase();
+      var match=!q||text.indexOf(q)>-1;
+      if(match){card.removeAttribute("data-hidden");grpVis++;total++;}
+      else{card.setAttribute("data-hidden","true");}
+    });
+    var pw=grp.querySelector(".packer-table-wrap");
+    if(pw){
+      var pt=pw.innerText.toLowerCase();
+      if(!q||pt.indexOf(q)>-1){grpVis++;total++;}
+    }
+    if(grpVis===0&&(cards.length>0||grp.querySelector(".packer-table-wrap"))){
+      grp.setAttribute("data-hidden","true");
+    }
+  });
+  noResults.style.display=(total===0&&q)?"block":"none";
+  countEl.textContent=q?total+" référence"+(total>1?"s":"")+" trouvée"+(total>1?"s":""):"";
+}
+
+chips.forEach(function(chip){
+  chip.addEventListener("click",function(){
+    chips.forEach(function(c){c.classList.remove("active")});
+    chip.classList.add("active");
+    activeCat=chip.getAttribute("data-cat");
+    applyFilters();
+  });
+});
+searchInput.addEventListener("input",function(){
+  searchTerm=searchInput.value;
+  applyFilters();
+});
+
+})();
+</script>
+</body>
+</html>
